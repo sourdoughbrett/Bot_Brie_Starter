@@ -63,6 +63,7 @@ Starter-Package-Repo/
 ├── requirements.txt         # Python dependencies for the boilerplate
 ├── LICENSE           # Licensing information
 └── CHANGELOG.md      # Version history
+```plaintext
 
 ### **a. Boilerplate Scripts**
 Live trading scripts located in `scripts/boilerplate/`:
