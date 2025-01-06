@@ -43,6 +43,26 @@ To get started, ensure you have the required dependencies and tools installed. T
 All back-testing script timeframes can be customized (1m, daily, weekly, etc.) Remember you need an Alpaca Market Subscription to access historical bars within 15 minutes of real-time data.
 
 The repository is organized as follows:
+🚀
+```plaintext
+Starter-Package-Repo/
+├── scripts/
+│   ├── boilerplate/
+│   │   ├── Trailing_Stop_OHLC.py          # 1d boilerplate (OHLC Bars)
+│   │   ├── Heikin_Ashi_Swing_Alert.py     # 1d boilerplate (Heiken Ashi Bars)
+│   ├── backtest/
+│   │   ├── OHLC.py                    # 1d back-tester (OHLC Bars)
+│   │   ├── Heikin_Ashi.py             # 1d back-tester (Heiken Ashi Bars)
+├── config/
+│   ├── boilerplate_config.yml      # Shared configuration settings
+│   ├── backtest_config.yml         # Example backtest configuration
+├── docs/
+│   ├── Environment_Setup.md      # Installing Anaconda and Spyder IDE 
+│   ├── Bot_Tutorials.md          # Important how-to tutorials
+├── README.md                # Boilerplate Overview
+├── requirements.txt         # Python dependencies for the boilerplate
+├── LICENSE           # Licensing information
+└── CHANGELOG.md      # Version history
 
 ### **a. Boilerplate Scripts**
 Live trading scripts located in `scripts/boilerplate/`:
@@ -164,25 +184,3 @@ For further assistance, feel free to reach us at:
 
 ## **License**
 This project is licensed under the MIT License. See the `LICENSE` file for details.
-
-## **6. Repo Structure** 🚀
-
-```plaintext
-Starter-Package-Repo/
-├── scripts/
-│   ├── boilerplate/
-│   │   ├── Trailing_Stop_OHLC.py          # 1d boilerplate (OHLC Bars)
-│   │   ├── Heikin_Ashi_Swing_Alert.py     # 1d boilerplate (Heiken Ashi Bars)
-│   ├── backtest/
-│   │   ├── OHLC.py                    # 1d back-tester (OHLC Bars)
-│   │   ├── Heikin_Ashi.py             # 1d back-tester (Heiken Ashi Bars)
-├── config/
-│   ├── boilerplate_config.yml      # Shared configuration settings
-│   ├── backtest_config.yml         # Example backtest configuration
-├── docs/
-│   ├── Environment_Setup.md      # Installing Anaconda and Spyder IDE 
-│   ├── Bot_Tutorials.md          # Important how-to tutorials
-├── README.md                # Boilerplate Overview
-├── requirements.txt         # Python dependencies for the boilerplate
-├── LICENSE           # Licensing information
-└── CHANGELOG.md      # Version history
