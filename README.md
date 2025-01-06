@@ -167,6 +167,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ## **6. Repo Structure** 🚀
 
+```plaintext
 Starter-Package-Repo/
 ├── scripts/
 │   ├── boilerplate/
