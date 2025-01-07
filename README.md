@@ -99,6 +99,7 @@ The `docs/` directory contains detailed guides and reference materials to help u
   - Verifying and managing Python dependencies.
 
 - **`Bot_Tutorials.md`**: Practical examples and tutorials for implementing various trading strategies, including:
+  - How TradingView will transform your algorithmic strategies (see blog too).
   - Using technical indicators like MACD, RSI, and Bollinger Bands.
   - Setting up trailing stops and OCO orders.
   - Creating and customizing backtesting scenarios.
@@ -124,10 +125,10 @@ Below is a breakdown of the main intra-script code sections:
 
 ### **Section 2: Global Variables**
 - Define key variables such as:
-  - Timeframes
+  - Timeframes (1m, 2m, 3m, 5m, 15m, 1h, 1d, 1w)
   - Start/End Times (down to the millisecond)
   - Indicator values
-  - Stop-Loss/Take-Profit values
+  - Stop-Loss/Take-Profit values (down to the thousandth decimal)
   - Elapsed Bar Time
 
 ### **Section 3: Key Functions**
@@ -154,6 +155,8 @@ Below is a breakdown of the main intra-script code sections:
 - ***For Backtesting scripts***: 
   - Contains backtesting functions to analyze historical strategy performance.
   - Creates a visual with matplotlib of the PnL performance over the backtest period.
+  - Recommended to run a single asset in the backtest at a time.
+  - Play with settings (tp,sl, position size, indicator vals, etc.).
   - *Backtesting logic should perfectly match paper/live strategy logic for highest accuracy of results and efficacy.*
 
 ---
