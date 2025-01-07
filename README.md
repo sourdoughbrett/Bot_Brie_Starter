@@ -144,15 +144,15 @@ Below is a breakdown of the main intra-script code sections:
 
 ### **Section 5: Main Function**
 - ***For Live/Paper Trading***:
-- **Market Hours**: The script continuously checks the current time against the defined market start and end times in the Eastern timezone. Trading operations only occur within these hours.
-- **Data Retrieval**: Calls the Alpaca API to fetch historical stock data. Appends all data to `stock_data` for real-time processing.
-- **Open Positions Check**: The script verifies if there are any existing long or short positions to prevent holding simultaneous conflicting positions.
-- **Trade Execution Logic**: Implements trading logic (Long and Short) based on predefined conditions.
-- **Order Status Check:**: Continuously monitors the status of placed orders to ensure they are filled or canceled.
-- **Sleep Timer:**: Puts the script to sleep for a calculated duration until the next minute, ensuring the script operates efficiently.
-- **Iteration Tracking:**: Logs information for each iteration, such as current positions and the number of trades executed.
+- **Market Hours:**: The script continuously checks the current time against the defined market start and end times in the Eastern timezone. Trading operations only occur within these hours.
+- **Data Retrieval:** Calls the Alpaca API to fetch historical stock data. Appends all data to `stock_data` for real-time processing.
+- **Open Positions Check:** The script verifies if there are any existing long or short positions to prevent holding simultaneous conflicting positions.
+- **Trade Execution Logic:** Implements trading logic (Long and Short) based on predefined conditions.
+- **Order Status Check:** Continuously monitors the status of placed orders to ensure they are filled or canceled.
+- **Sleep Timer:** Puts the script to sleep for a calculated duration until the next minute, ensuring the script operates efficiently.
+- **Iteration Tracking:** Logs information for each iteration, such as current positions and the number of trades executed.
 - Within the main function is where you will add the code logic for your strategies 🧑‍💻 visit `Bot_Tutorials.md`
-- ***For Backtesting scripts***: 
+- ***For Backtesting scripts:***
   - Contains backtesting functions to analyze historical strategy performance.
   - Creates a visual with matplotlib of the PnL performance over the backtest period.
   - Recommended to run a single asset in the backtest at a time.
