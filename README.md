@@ -48,17 +48,17 @@ The repository is organized as follows:
 Starter-Package-Repo/
 ├── scripts/
 │   ├── boilerplate/
-│   │   ├── Trailing_Stop_OHLC.py          # 1d boilerplate (OHLC Bars)
-│   │   ├── Heikin_Ashi_Swing_Alert.py     # 1d boilerplate (Heiken Ashi Bars)
+│   │   ├── Trailing_Stop_OHLC.py        # 1d boilerplate (OHLC Bars)
+│   │   ├── Heikin_Ashi_Swing_Alert.py   # 1d boilerplate (Heiken Ashi Bars)
 │   ├── backtest/
-│   │   ├── OHLC.py                    # 1d back-tester (OHLC Bars)
-│   │   ├── Heikin_Ashi.py             # 1d back-tester (Heiken Ashi Bars)
+│   │   ├── OHLC.py                # 1d back-tester (OHLC Bars)
+│   │   ├── Heikin_Ashi.py         # 1d back-tester (Heiken Ashi Bars)
 ├── config/
-│   ├── boilerplate_config.yml      # Shared configuration settings
-│   ├── backtest_config.yml         # Example backtest configuration
+│   ├── boilerplate_config.yml    # Shared configuration settings
+│   ├── backtest_config.yml       # Example backtest configuration
 ├── docs/
-│   ├── Environment_Setup.md      # Installing Anaconda and Spyder IDE 
-│   ├── Bot_Tutorials.md          # Important how-to tutorials
+│   ├── Environment_Setup.md    # Installing Anaconda and Spyder IDE 
+│   ├── Bot_Tutorials.md        # Important how-to tutorials
 ├── README.md                # Boilerplate Overview
 ├── requirements.txt         # Python dependencies for the boilerplate
 ├── LICENSE           # Licensing information
@@ -128,6 +128,7 @@ Below is a breakdown of the main intra-script code sections:
   - Start/End Times (down to the millisecond)
   - Indicator values
   - Stop-Loss/Take-Profit values
+  - Elapsed Bar Time
 
 ### **Section 3: Key Functions**
 - **Bar Retrieval**: Functions to retrieve historical bars (e.g., Heiken Ashi for All-In version).
