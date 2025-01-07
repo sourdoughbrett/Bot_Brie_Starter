@@ -125,10 +125,10 @@ Below is a breakdown of the main intra-script code sections:
 
 ### **Section 2: Global Variables**
 - Define key variables such as:
-  - Timeframes (1m, 2m, 3m, 5m, 15m, 1h, 1d, 1w)
+  - Timeframes (1m, 15m, 1h, 1d, 1w)
   - Start/End Times (down to the millisecond)
   - Indicator values
-  - Stop-Loss/Take-Profit values (down to the thousandth decimal)
+  - Trailing Stop Percentage
   - Elapsed Bar Time
 
 ### **Section 3: Key Functions**
