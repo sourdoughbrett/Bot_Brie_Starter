@@ -100,8 +100,8 @@ The `docs/` directory contains detailed guides and reference materials to help u
 
 - **`Bot_Tutorials.md`**: Practical examples and tutorials for implementing various trading strategies, including:
   - How TradingView will transform your algorithmic strategies (see blog too).
-  - Using technical indicators like MACD, RSI, and Bollinger Bands.
-  - Setting up trailing stops and OCO orders.
+  - Getting started with the Bot.
+  - Configuring and running sample strategies.
   - Creating and customizing backtesting scenarios.
 
 **How to Use the Documentation:**
