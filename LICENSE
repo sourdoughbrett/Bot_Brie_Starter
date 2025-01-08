@@ -1,21 +1,37 @@
-MIT License
+Copyright (c) 2025 API Trade Builder
 
-Copyright (c) 2025 Brett
+This Software License Agreement ("Agreement") governs the terms and conditions under which the software known as "Bot Brie Boilerplate" (the "Software") is licensed for use. By downloading, using, or altering the Software, you ("User") agree to be bound by this Agreement.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. Grant of License
+apitradebuilder.com ("Licensor") hereby grants the User a limited, non-exclusive, non-transferable license to use and modify the Software for personal use only, subject to the restrictions outlined below. The User is expressly prohibited from distributing, sublicensing, or reselling the Software, in whole or in part, under any jurisdiction.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+2. Permitted Uses
+The User may download, install, and use the Software for personal, non-commercial purposes.
+The User may modify or alter the Software solely for personal use.
+The User must retain the copyright notice and this Agreement in any copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+3. Prohibited Uses
+The User may not distribute, publish, sublicense, sell, or otherwise transfer the Software or any derivative works created from the Software.
+The User may not use the Software, or any part thereof, for commercial purposes, including but not limited to offering it as a service, selling it, or otherwise generating revenue.
+The User may not remove or alter any copyright or license notices.
+
+4. Penalties for Misuse
+Misuse of the Software, including unauthorized dissemination, sublicensing, or resale, is strictly prohibited and may result in civil and criminal penalties as applicable under federal law and the state laws of Washington.
+
+Federal Law: Unauthorized distribution of copyrighted software may constitute a violation of the U.S. Copyright Act and may subject the User to damages, statutory penalties, and potential criminal charges.
+Washington State Law: Under the Revised Code of Washington (RCW), unauthorized use or distribution may also subject the User to additional civil penalties and liability.
+
+5. Disclaimer of Warranties
+THE SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+6. Governing Law
+This Agreement shall be governed by and construed in accordance with the laws of the State of Washington, without regard to its conflict of law provisions.
+
+7. Enforcement
+The Licensor reserves the right to seek injunctive relief and/or monetary damages for violations of this Agreement. The User agrees that any legal action or proceeding arising under this Agreement shall be brought exclusively in the courts of the State of Washington.
+
+8. Severability
+If any provision of this Agreement is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.
+
+9. Entire Agreement
+This Agreement constitutes the entire understanding between the parties concerning the subject matter and supersedes all prior agreements, whether written or oral, relating to the Software.
