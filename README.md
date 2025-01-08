@@ -28,7 +28,9 @@ The Bot Brie All-In Boilerplate is a powerful, customizable trading framework de
 
 Explore scripts for both live/paper trading and backtesting in the respective `scripts/boilerplate` and `scripts/backtest` directories.
 
-Remember, always thoroughly forward and backtest for strategy efficacy before launching live. Test ==> Feedback ==> Iterate ==> Improve.
+Remember, always thoroughly forward and backtest for strategy efficacy before launching live. 
+
+*Test ==> Feedback ==> Iterate ==> Improve*
 
 ---
 
@@ -40,7 +42,9 @@ To get started, ensure you have the required dependencies and tools installed. T
 ---
 
 ## **3. Project Structure** 💻
-All back-testing script timeframes can be customized (1m, daily, weekly, etc.) Remember you need an Alpaca Market Subscription to access historical bars within 15 minutes of real-time data.
+All back-testing script timeframes can be customized (1m, daily, weekly, etc.) 
+
+**Remember you need an Alpaca Market Subscription to access historical bars within 15 minutes of real-time data.**
 
 The repository is organized as follows:
 🚀
@@ -67,8 +71,8 @@ Starter-Package-Repo/
 
 ### **a. Boilerplate Scripts**
 Live trading scripts located in `scripts/boilerplate/`:
-- **Trailing_Stop_OHLC.py**: Implements trailing stop logic for live trading (daily timeframe)
-- **Heikin_Ashi_Swing_Alert.py**: Example script of a swing alert strategy with Heikin Ashi bars (daily timeframe).
+- **Trailing_Stop_OHLC.py**: Implements trailing stop logic for live trading (daily timeframe example)
+- **Heikin_Ashi_Swing_Alert.py**: Example script of a swing alert strategy with Heikin Ashi bars (daily timeframe example).
 
 ### **b. Backtesting Scripts**
 Backtesting scripts located in `scripts/backtest/`:
@@ -80,7 +84,9 @@ Backtesting scripts located in `scripts/backtest/`:
 The `config/` directory contains YAML configuration files that store critical settings and parameters used by the scripts. These files help centralize and streamline the configuration process, making it easier to manage and update your trading environment. Key details include:
 
 - **boilerplate_config.yml**:  
-  This file contains shared settings for live trading, such as your **API keys**, which are required to authenticate with Alpaca’s API. It also stores **global variables** such as the list of trading symbols, position sizing, timeframe constraints, and indicator parameters. By editing this file, you can customize the behavior of the live trading scripts without modifying the code directly.
+  - This file contains shared settings for live trading, such as your **API keys**, which are required to authenticate with Alpaca’s API.
+  - It also stores **global variables** such as the list of trading symbols, position sizing, timeframe constraints, and indicator parameters.
+  - By editing this file, you can customize the behavior of the live trading scripts without modifying the code directly.
 - **backtest_config.yml**:  
   This file defines the parameters for running backtesting scenarios, such as historical start and end dates, the data source for historical bars, and any specific strategy configurations. It ensures consistency and reproducibility when testing strategies against historical data.
 
