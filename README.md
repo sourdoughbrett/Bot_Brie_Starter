@@ -52,21 +52,21 @@ The repository is organized as follows:
 Starter-Package-Repo/
 ├── scripts/
 │   ├── boilerplate/
-│   │   ├── Trailing_Stop_OHLC.py        # 1d boilerplate (OHLC Bars)
-│   │   ├── Heikin_Ashi_Swing_Alert.py   # 1d boilerplate (Heiken Ashi Bars)
+│   │   ├── Trailing_Stop_OHLC.py        
+│   │   ├── Heikin_Ashi_Swing_Alert.py  
 │   ├── backtest/
-│   │   ├── OHLC.py                # 1d back-tester (OHLC Bars)
-│   │   ├── Heikin_Ashi.py         # 1d back-tester (Heiken Ashi Bars)
+│   │   ├── OHLC.py                
+│   │   ├── Heikin_Ashi.py         
 ├── config/
-│   ├── boilerplate_config.yml    # Shared configuration settings
-│   ├── backtest_config.yml       # Example backtest configuration
+│   ├── boilerplate_config.yml    
+│   ├── backtest_config.yml     
 ├── docs/
-│   ├── Environment_Setup.md    # Installing Anaconda and Spyder IDE 
-│   ├── Bot_Tutorials.md        # Important how-to tutorials
-├── README.md                # Boilerplate Overview
-├── requirements.txt         # Python dependencies for the boilerplate
-├── LICENSE           # Licensing information
-└── CHANGELOG.md      # Version history
+│   ├── Environment_Setup.md     
+│   ├── Bot_Tutorials.md       
+├── README.md                
+├── requirements.txt         
+├── LICENSE         
+└── CHANGELOG.md
 ```
 
 ### **a. Boilerplate Scripts**
