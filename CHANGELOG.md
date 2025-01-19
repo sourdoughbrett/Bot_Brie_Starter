@@ -12,6 +12,7 @@
 - Global YAML configuration support for API keys, symbols, and trading parameters.
 - logging_example in /extra folder
 - Added Alpaca instructions to README
+- Added blog articles (4) to apitradebuilder.com/blog
 
 ### Changed
 - Optimized error handling for all scripts.
