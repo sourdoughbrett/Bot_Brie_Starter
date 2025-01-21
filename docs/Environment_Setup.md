@@ -1,6 +1,6 @@
 # **Environment Setup**
 
-This guide provides step-by-step instructions to set up your development environment using the Anaconda distribution. 
+This guide provides step-by-step instructions to set up your development environment using the Anaconda distribution and Spyder IDE. 
 
 However, you are free to use any IDE or environment that suits your preferences, such as **VS Code**, **PyCharm**, or **Jupyter Notebook**, as long as you ensure compatibility with Python 3.10 or higher and install the required dependencies.
 
@@ -20,6 +20,32 @@ If you do not have Anaconda installed, follow these steps to set it up:
    conda --version
 
 If installed correctly, this will display the installed version of conda.
+
+## **Installing the Spyder IDE**
+Spyder is a scientific Python development environment that integrates seamlessly with Anaconda. Follow these steps to install and configure Spyder:
+
+1. **Install Spyder:**  
+   Open the Anaconda Prompt and run the following command:
+   ```plaintext
+   conda install spyder -y
+   ```
+   
+2. **Verify Installation**  
+   After installation, type the following command to ensure Spyder is installed correctly:
+   ```plaintext
+   spyder --version
+   ```
+                                                                
+3. **Launch Spyder**  
+   To launch the Spyder IDE from the Anaconda Prompt, simply type:
+      ```plaintext
+   spyder
+   ```
+
+Alternatively, you can open Spyder from the Anaconda Navigator:
+
+- Open Anaconda Navigator.
+- Locate Spyder in the list of applications and click Launch.
 
 ## **Key Considerations with Anaconda**
 1. **Order Matters:**  
