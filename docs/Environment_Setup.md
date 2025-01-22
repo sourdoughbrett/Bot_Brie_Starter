@@ -22,12 +22,12 @@ If you do not have Anaconda installed, follow these steps to set it up:
 If installed correctly, this will display the installed version of conda.
 
 ## **Installing the Spyder IDE**
-Spyder is a scientific Python development environment that integrates seamlessly with Anaconda. Follow these steps to install and configure Spyder:
+Spyder is a scientific Python development environment that integrates seamlessly with Anaconda. Follow these steps to install and configure Spyder (5.15>):
 
 1. **Install Spyder:**  
    Open the Anaconda Prompt and run the following command:
    ```plaintext
-   conda install spyder -y
+   conda install spyder=5.15 -c conda-forge -y
    ```
    
 2. **Verify Installation**  
