@@ -170,7 +170,6 @@ Below is a breakdown of the main intra-script code sections:
 ## **5. Bot Tutorials**
 Learn how to leverage the boilerplate to design and test your own trading strategies. The Bot Tutorials guide provides step-by-step instructions for:
 - Getting Started.
-- Configuring and running sample strategies.
 - Adjusting parameters for technical indicators like MACD, RSI, and Bollinger Bands.
 - Adding bars and more indicators
 - Backtesting strategies for robust validation.
