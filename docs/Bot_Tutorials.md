@@ -27,17 +27,28 @@ api_base_url: 'https://paper-api.alpaca.markets'
 As laid out in the README file, the boilerplate is broken down into 5 sections:
 ```plaintext
 Section 1: Config, Modules, and Imports
-Section 2: Global/Key Variable Settings
+Section 2: Global/Key Variable Settings (Add settings here)
 Section 3: Key Functions
 Section 4: Test DataFrame Config
-Section 5: Main Function
+Section 5: Main Function (Add strategies here)
 ```
-The only sections you will need to modify (unless your adding indicators or testing how the df will update is section 2 and section 5).
+The only sections you will need to modify (unless your adding indicators or testing how the test df (hist_data_raw) will update is section 2 and section 5).
   
 ## 2. Adusting Global Parameters for Script Optimization
 Section 2 is where you will update your start/end times, indicator values, and trailing stop params.
 
 ```plaintext
+###################################Section 2: Global/Key Variable Settings#####################################
+
+# add symbols here if you do not want to store them via YML config file
+# symbols = ['NVDA','TSLA','MSFT']
+
+'''
+TIME VALUES (UPDATE BASED ON STRATEGY)
+
+must make sure yml date file is updated as its pulling the data from X amt of days back from your indicator vals.
+'''
+
 timeframe = "Hour" #Change to Minute, Hour, Day, Week, Month for 1m, 1h, 1d, 1w, 1m timeframes.
 
 # Start/End Time constraints (Start Time 9,30 = market open9:30am est)
@@ -85,6 +96,35 @@ trail_pct = 2.0
 ```
 
 ## 3. Configuring and running sample strategies
+Section 5 is where you will provide your strategy logic. The default strategy included in the Trailing_Stop_OHLC file features a psar crossover while the RSI is at a certain threshold.
+
+```plaintext
+# LONG TRADE ENTRY LOGIC PLACED HERE
+if ((cur_bar_data > cur_psar and lag1_bar_data < lag1_psar) and \
+    (cur_rsi < 30)):
+# LONG TRADE ENTRY LOGIC ENDS HERE
+
+code...
+
+# SHORT TRADE ENTRY LOGIC PLACED HERE
+if ((cur_bar_data < cur_psar and lag1_bar_data > lag1_psar) and \
+    (cur_rsi > 70)):
+# SHORT TRADE EXIT LOGIC PLACED HERE
+```
+So what exactly is going on? When the script runs it updates every 60 seconds + the value of the "elapsed_bar_time" variable. In this case, 1 second after the minute bar elapses or updates. The main_function has a while loop condition that runs and checks the api for updates on this cycle pattern. The script can be altered to update every 2 minutes, 5, 15, etc. As it checks for new bar data information, the timeseries tables will be updated and the script will take positions based on the criteria set.
+
+Let's say I wanted to check if the RSI was underneath 10 or over 90 for 3 consecutive periods (wow oversold much?)
+```plaintext
+# LONG TRADE ENTRY LOGIC PLACED HERE
+if ((lag2_rsi < 10 and lag1_rsi < 10 and cur_rsi < 10)):
+# LONG TRADE ENTRY LOGIC ENDS HERE
+
+code...
+
+# SHORT TRADE ENTRY LOGIC PLACED HERE
+if ((lag2_rsi > 90 and lag1_rsi > 90 and cur_rsi > 90)):
+# SHORT TRADE EXIT LOGIC PLACED HERE
+```
 
 ## 4. Adding more Bars and Indicators
 
