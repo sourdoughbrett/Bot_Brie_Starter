@@ -127,6 +127,8 @@ code...
 if ((lag2_rsi > 90 and lag1_rsi > 90 and cur_rsi > 90)):
 # SHORT TRADE EXIT LOGIC PLACED HERE
 ```
+This can become quite useful, espcially if you can scan for dozens of assets at a time to determine if any anomalistic conditions are occuring.
+
 Have an idea? Build it, Test it, Validate it.
 ## 4. Adding more Bars and Indicators
 
