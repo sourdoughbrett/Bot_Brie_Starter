@@ -7,6 +7,8 @@ git clone https://github.com/sourdoughbrett/Bot_Brie_Starter.git
 
 Alternatively you can copy and paste the files from Github since there are only a hand full.
 
+--
+
 To begin using the Bot Brie All-In Boilerplate, you'll first need access to Alpaca’s API. 
 
 Follow these steps to create an Alpaca account and obtain your API keys:
