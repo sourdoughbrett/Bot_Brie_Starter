@@ -1,5 +1,12 @@
 # **Bot Brie Starter Boilerplate**
 
+clone the repository to your local environment:
+```plaintext
+git clone https://github.com/sourdoughbrett/Bot_Brie_Starter.git
+```
+
+Alternatively you can copy and paste the files from Github since there are only a hand full.
+
 To begin using the Bot Brie All-In Boilerplate, you'll first need access to Alpaca’s API. 
 
 Follow these steps to create an Alpaca account and obtain your API keys:
@@ -20,14 +27,6 @@ Follow these steps to create an Alpaca account and obtain your API keys:
 ---
 
 ## **1. Overview** 📣
-
-clone the repository to your local environment:
-```plaintext
-git clone https://github.com/sourdoughbrett/Bot_Brie_Starter.git
-```
-
-Alternatively you can copy and paste the files from Github since there are only a hand full.
-
 The Bot Brie All-In Boilerplate is a powerful, customizable trading framework designed to help you automate trading strategies using Alpaca’s API. This package supports:
 - **Trailing_Stops** for dynamic risk management.
 - **Multiple Timeframes** for flexible strategy implementation (e.g., 1m, 15m, daily bars).
