@@ -111,7 +111,9 @@ if ((cur_bar_data < cur_psar and lag1_bar_data > lag1_psar) and \
     (cur_rsi > 70)):
 # SHORT TRADE EXIT LOGIC PLACED HERE
 ```
-So what exactly is going on? When the script runs it updates every 60 seconds + the value of the "elapsed_bar_time" variable. In this case, 1 second after the minute bar elapses or updates. The main_function has a while loop condition that runs and checks the api for updates on this cycle pattern. The script can be altered to update every 2 minutes, 5, 15, etc. As it checks for new bar data information, the timeseries tables will be updated and the script will take positions based on the criteria set.
+So what exactly is going on? 
+
+When the script runs it updates every 60 seconds + the value of the "elapsed_bar_time" variable. In this case, 1 second after the minute bar elapses or updates. The main_function has a while loop condition that runs and checks the api for updates on this cycle pattern. The script can be altered to update every 2 minutes, 5, 15, etc. As it checks for new bar data information, the timeseries tables will be updated and the script will take positions based on the criteria set. Whether your using minute, hourly, or daily bars, the script will continue to update and check for new bar data every 60 seconds.
 
 Let's say I wanted to check if the RSI was underneath 10 or over 90 for 3 consecutive periods (wow oversold much?)
 ```plaintext
@@ -125,7 +127,7 @@ code...
 if ((lag2_rsi > 90 and lag1_rsi > 90 and cur_rsi > 90)):
 # SHORT TRADE EXIT LOGIC PLACED HERE
 ```
-
+Have an idea? Build it, Test it, Validate it.
 ## 4. Adding more Bars and Indicators
 
 ## 5. Backtesting Overview
