@@ -24,7 +24,65 @@ api_base_url: 'https://paper-api.alpaca.markets'
 4.	Test the bot by running the program (Press F5).
      - If any errors are produced it likely has to do with the timeframe, start_date and end_date. Make sure the boundaries are appropriate depending on the timeframe used.
   
+As laid out in the README file, the boilerplate is broken down into 5 sections:
+```plaintext
+Section 1: Config, Modules, and Imports
+Section 2: Global/Key Variable Settings
+Section 3: Key Functions
+Section 4: Test DataFrame Config
+Section 5: Main Function
+```
+The only sections you will need to modify (unless your adding indicators or testing how the df will update is section 2 and section 5).
+  
 ## 2. Adusting Global Parameters for Script Optimization
+Section 2 is where you will update your start/end times, indicator values, and trailing stop params.
+
+```plaintext
+timeframe = "Hour" #Change to Minute, Hour, Day, Week, Month for 1m, 1h, 1d, 1w, 1m timeframes.
+
+# Start/End Time constraints (Start Time 9,30 = market open9:30am est)
+hour_start_time = 9
+minute_start_time = 30
+hour_end_time = 15
+minute_end_time = 30
+
+# elapsed bar time (how many seconds until after the bar data updates do you want the script to update?) Recommendation is 1 - 3 seconds.
+elapsed_bar_time = 1
+
+'''
+INDICATOR VALUES (UPDATE BASED ON STRATEGY)
+
+Only a few indicator values have been hard coded as global variables, you can add as many as you would like :)
+'''
+
+# MACD 
+macd_fast_period_val = 12
+macd_slow_period_val = 26
+macd_signal_period_val = 2
+# EMA
+ema_fast_period_val = 3
+ema_mod_period_val =  6
+ema_slow_period_val = 50
+ema_20_period_val = 20
+# SMA
+sma_fast_period_val = 20
+sma_slow_period_val = 50
+# BB
+bb_dev_factor_intense_val = 3.0
+bb_dev_factor_tame_val = 1.0
+# PSAR
+psar_acceleration_dev_factor = 0.02
+psar_maximum_dev_factor = 0.2
+# Stochastic
+stoch_slowK_period_val = 3
+stoch_slowD_period_val = 3
+stoch_fastK_period_val = 14
+
+'''
+Take Profit / Stop Loss Params
+'''
+trail_pct = 2.0
+```
 
 ## 3. Configuring and running sample strategies
 
