@@ -96,7 +96,9 @@ trail_pct = 2.0
 ```
 
 ## 3. Configuring and running sample strategies
-Section 5 is where you will provide your strategy logic. The default strategy included in the Trailing_Stop_OHLC file features a psar crossover while the RSI is at a certain threshold.
+Section 5 is where you will provide your strategy logic.
+
+This strategy takes a position when the PSAR (trend following indicator) changes direction while the RSI is underneath or over a certain threshold.
 
 ```plaintext
 # LONG TRADE ENTRY LOGIC PLACED HERE
@@ -112,8 +114,6 @@ if ((cur_bar_data < cur_psar and lag1_bar_data > lag1_psar) and \
 # SHORT TRADE EXIT LOGIC PLACED HERE
 ```
 So what exactly is going on?
-
-This strategy takes a position when the PSAR (trend following indicator) changes direction while the RSI is underneath or over a certain threshold.
 
 When the script runs it updates every 60 seconds + the value of the "elapsed_bar_time" variable. In this case, 1 second after the minute bar elapses or updates. The main_function has a while loop condition that runs and checks the api for updates on this cycle pattern. 
 
