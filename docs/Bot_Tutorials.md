@@ -161,7 +161,6 @@ if ((lag1_macd > lag1_macd_signal and cur_macd < cur_macd_signal) and \
 Have an idea? Build it, Test it, Validate it.
 ## 4. Adding more Bars and Indicators
 
-#Indicators
 Section 3 is where you will add more indicators if you desire. If you have an idea, copy and paste an indicator function from the boilerplate and ask gpt to format the function the same and create a new indicator (xyz indicator).
 
 Example:
@@ -176,7 +175,6 @@ Example:
        stock_data['RSI'] = rsi_series
      ```
 
-#Bars 
 Bars is pretty straight forward. All data is appended to symbol_data (this includes all bar and indicator information. Everything.)
 Add your bars:
 ```plaintext
