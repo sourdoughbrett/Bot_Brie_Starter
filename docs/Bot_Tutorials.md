@@ -111,9 +111,21 @@ if ((cur_bar_data < cur_psar and lag1_bar_data > lag1_psar) and \
     (cur_rsi > 70)):
 # SHORT TRADE EXIT LOGIC PLACED HERE
 ```
-So what exactly is going on? 
+So what exactly is going on?
 
-When the script runs it updates every 60 seconds + the value of the "elapsed_bar_time" variable. In this case, 1 second after the minute bar elapses or updates. The main_function has a while loop condition that runs and checks the api for updates on this cycle pattern. The script can be altered to update every 2 minutes, 5, 15, etc. As it checks for new bar data information, the timeseries tables will be updated and the script will take positions based on the criteria set. Whether your using minute, hourly, or daily bars, the script will continue to update and check for new bar data every 60 seconds.
+This strategy takes a position when the PSAR (trend following indicator) changes direction while the RSI is underneath or over a certain threshold.
+
+When the script runs it updates every 60 seconds + the value of the "elapsed_bar_time" variable. In this case, 1 second after the minute bar elapses or updates. The main_function has a while loop condition that runs and checks the api for updates on this cycle pattern. 
+
+If you wanted to update the script more or less frequently, you would change next_min to your desired timeframe (ex: every 15 seconds, every 15 minutes, etc.).
+```plaintext
+# Calculate seconds until the next minute starts
+# if using 2m,5m, etc. bars, minutes will need to match the timeframe value below
+current_time = datetime.now()
+next_min = (current_time + timedelta(minutes=1)).replace(second=0, microsecond=0)
+```
+⏰
+Moving forward..!
 
 Let's say I wanted to check if the RSI was underneath 10 or over 90 for 3 consecutive periods (wow oversold much?)
 ```plaintext
@@ -129,7 +141,77 @@ if ((lag2_rsi > 90 and lag1_rsi > 90 and cur_rsi > 90)):
 ```
 This can become quite useful, espcially if you can scan for dozens of assets at a time to determine if any anomalistic conditions are occuring.
 
+Finding confluences of signals can be lead to better outcomes as well:
+```plaintext
+# LONG TRADE ENTRY LOGIC PLACED HERE
+if ((lag1_macd < lag1_macd_signal and cur_macd > cur_macd_signal) and \
+    (lag1_stoch_SlowK < lag1_stoch_SlowD and cur_stoch_SlowK > cur_stoch_SlowD) and \
+    (lag1_HA_color == 'red' and cur_HA_color == 'green')):
+# LONG TRADE ENTRY LOGIC ENDS HERE
+
+code...
+
+# SHORT TRADE ENTRY LOGIC PLACED HERE
+if ((lag1_macd > lag1_macd_signal and cur_macd < cur_macd_signal) and \
+    (lag1_stoch_SlowK > lag1_stoch_SlowD and cur_stoch_SlowK < cur_stoch_SlowD) and \
+    (lag1_HA_color == 'green' and cur_HA_color == 'red')):
+# SHORT TRADE ENTRY LOGIC PLACED HERE
+```
+
 Have an idea? Build it, Test it, Validate it.
 ## 4. Adding more Bars and Indicators
 
+#Indicators
+Section 3 is where you will add more indicators if you desire. If you have an idea, copy and paste an indicator function from the boilerplate and ask gpt to format the function the same and create a new indicator (xyz indicator).
+
+Example:
+1) Copy the MACD function
+2) Begin to write in Chat GPT.. "Please create "xyz" indicator (LazyBear Momentum) from "zyx" (TradingView/TA-Lib) and format function precisely like my MACD function, here is my MACD function: (paste MACD function)"
+3) Verify Output is valid and the function returns a DataFrame or Series.
+4) Add the df to the hist_data_raw df for testing.
+5) If hist_data_raw df is valid, then append to stock_data in main func: 🔎
+
+     ```plaintext
+       rsi_series = calculate_rsi(df=stock_data, column='HA_close', period=14)
+       stock_data['RSI'] = rsi_series
+     ```
+
+#Bars 
+Bars is pretty straight forward. All data is appended to symbol_data (this includes all bar and indicator information. Everything.)
+Add your bars:
+```plaintext
+ symbol_data = stock_data.loc[symbol] # Get data for the current symbol (symbol data is where ALL of our data will be stored)
+ cur_period_data = symbol_data.iloc[-1] # Getting most recent row of data (Creating the timeseries data by time increment relative to real-time, these will become our bar increments)
+ lag1_period_data = symbol_data.iloc[-2] # Delayed by 1 periods
+ lag2_period_data = symbol_data.iloc[-3] # Delayed by 2 periods
+
+ cur_bar_data = cur_period_data['HA_close'] # Get the last row (latest period)
+ lag1_bar_data = lag1_period_data['HA_close']
+
+ cur_HA_color = cur_period_data['color']
+ lag1_HA_color = lag1_period_data['color']
+
+ cur_bar_data_high = cur_period_data['HA_high'] # Get the last row high price on the bar
+ cur_bar_data_low = cur_period_data['HA_low'] # Get the last row high price on the bar
+```
+
+Make your own bars:
+```plaintext
+ # Avg HLC Data
+ cur_avg_hlc = ((cur_bar_data + cur_bar_data_high + cur_bar_data_low)/3)
+ lag1_avg_hlc = ((lag1_bar_data + lag1_bar_data_high + lag1_bar_data_low)/3)
+ cur_avg_lc = ((cur_bar_data + cur_bar_data_low)/2)
+ cur_avg_hc = ((cur_bar_data + cur_bar_data_high)/2)
+```
+
+Get funky:
+```plaintext
+ # Rolling Avg High/Low Bar Data
+ cur_rolling_avg_high = cur_period_data['rolling_avg_high_price'] #pulling from rolling_avg_low func
+ cur_rolling_avg_low = cur_period_data['rolling_avg_low_price'] #pulling from rolling_avg_high func
+ lag1_rolling_avg_high = lag1_period_data['rolling_avg_high_price']
+ lag1_rolling_avg_low = lag1_period_data['rolling_avg_low_price']
+```
+
+This is just the beginning 🚀
 ## 5. Backtesting Overview
