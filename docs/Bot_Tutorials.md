@@ -21,7 +21,7 @@ SECRET_KEY: ''
 api_base_url: 'https://paper-api.alpaca.markets'
 ```
 3.	Update ‘config_file_path’ in `scripts/boilerplate/` to yml filepath (ex: "C:/Users/.../..../..../boilerplate_config.yml") 
-4.	Test the bot by running the program (Press F5).
+4.	Test the bot by running the program (Press F5) within the Spyder IDE. Alternatively you can run the script via the Anaconda Prompt, Command Line, or your own IDE system.
      - If any errors are produced it likely has to do with the timeframe, start_date and end_date. Make sure the boundaries are appropriate depending on the timeframe used.
   
 As laid out in the README file, the boilerplate is broken down into 5 sections:
