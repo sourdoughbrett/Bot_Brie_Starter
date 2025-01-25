@@ -1,0 +1,27 @@
+# Never Share this file under any circumstance with live api keys
+
+# Keys
+API_KEY: ''
+SECRET_KEY: ''
+api_base_url: 'https://paper-api.alpaca.markets'
+
+# Date constraints
+start_time: "2024-01-01"  # Start date in "yyyy-mm-dd" format
+end_time: "2024-12-30"    # End date in "yyyy-mm-dd" format
+
+# Position sizing (amount in USD per trade)
+ib: 20000
+
+
+# Take Profit / Stop Loss
+tp_pct: .01
+sl_pct: .01
+
+# Chart visual is valid for one symbol at a time, encouraged to test one symbol at a time.
+# Make sure all timeframes, dates, indicator parameters, and strategy logic is updated.
+
+symbols:
+  - PLTR
+
+
+
