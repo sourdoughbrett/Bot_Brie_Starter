@@ -1,1 +1,28 @@
+# Boilerplate Config File
 
+# Keys
+API_KEY: ''
+SECRET_KEY: ''
+api_base_url: 'https://paper-api.alpaca.markets' #switch url to 'https://api.alpaca.markets' for live trading
+
+
+# Date constraints
+# The start time should be updated daily so the script does not pull unnecessary data, etc.
+start_time: "2024-01-01"  # Start date in "yyyy-mm-dd" format
+end_time: "2025-12-31"    # End date in "yyyy-mm-dd" format
+
+# Position sizing (amount in USD per trade)
+position_size: 10000
+
+# Encouraged to keep other variables local for the purpose of parameter specificity for the strategy. 
+# For example not all strategies may use the same timeframe or values for the MACD, etc.
+# Symbols/position_size could be local or in this yml file based on strategy.
+
+# Symbols (RECOMMENDATION: <50 symbols for intraday strategies per script and <500 symbols for daily strategies per script running. Run times will decline with more symbols and put more stress on alpacas servers)
+
+symbols:
+  - NVDA
+  - TSLA
+  - SMCI
+  - PLTR
+  - RDDT
