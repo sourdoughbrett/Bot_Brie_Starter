@@ -1,4 +1,4 @@
-## Introduction
+## Introduction 👏
 If you have reached this page that is an excellent sign and you are now ready to put your bot to the real test :D
 
 Firstly, I want to say thank you for purchasing this product. I hope you find immense value in this code and can use it for whatever purposes you deem fit.
@@ -10,7 +10,7 @@ Leverage Chat GPT to answer nuanced questions about your Bot.
 
 If you are new to algorithmic trading, this is an excellent start and will push you immeasurably forward in your algorithmic trading journey. 
 
-## 1. Getting Started
+## 1. Getting Started 🚀
 The code is setup to plug and play (update your strategies of course). To begin, you need to set up your API keys:
 1.	Open the `boilerplate_config.yml` file located in the `/config` directory.
 2.	Add Alpaca Keys to yml file
@@ -34,7 +34,7 @@ Section 5: Main Function (Add strategies here)
 ```
 The only sections you will need to modify (unless your adding indicators or testing how the test df (hist_data_raw) will update is section 2 and section 5).
   
-## 2. Adusting Global Parameters for Script Optimization
+## 2. Adusting Global Parameters for Script Optimization 🧑‍💻
 Section 2 is where you will update your start/end times, indicator values, and trailing stop params.
 
 ```plaintext
@@ -95,7 +95,7 @@ Take Profit / Stop Loss Params
 trail_pct = 2.0
 ```
 
-## 3. Configuring and running sample strategies
+## 3. Configuring and running sample strategies 📊
 Section 5 is where you will provide your strategy logic.
 
 This strategy takes a position when the PSAR (trend following indicator) changes direction while the RSI is underneath or over a certain threshold.
@@ -159,7 +159,7 @@ if ((lag1_macd > lag1_macd_signal and cur_macd < cur_macd_signal) and \
 ```
 
 Have an idea? Build it, Test it, Validate it.
-## 4. Adding more Bars and Indicators
+## 4. Adding more Bars and Indicators 🔎
 
 Section 3 is where you will add more indicators if you desire. If you have an idea, copy and paste an indicator function from the boilerplate and ask gpt to format the function the same and create a new indicator (xyz indicator).
 
@@ -168,7 +168,7 @@ Example:
 2) Begin to write in Chat GPT.. "Please create "xyz" indicator (LazyBear Momentum) from "zyx" (TradingView/TA-Lib) and format function precisely like my MACD function, here is my MACD function: (paste MACD function)"
 3) Verify Output is valid and the function returns a DataFrame or Series.
 4) Add the df to the hist_data_raw df for testing.
-5) If hist_data_raw df is valid, then append to stock_data in main func: 🔎
+5) If hist_data_raw df is valid, then append to stock_data in main func:
 
      ```plaintext
        rsi_series = calculate_rsi(df=stock_data, column='HA_close', period=14)
@@ -211,5 +211,4 @@ Get funky:
  lag1_rolling_avg_low = lag1_period_data['rolling_avg_low_price']
 ```
 
-This is just the beginning 🚀
-## 5. Backtesting Overview
+## 5. Backtesting Overview 💻
