@@ -8,7 +8,9 @@ There are no limitations to what you can do with the boilerplate, I encourage yo
 With that said, Chat GPT and other AI tools can be your best friend in 1) Adding features to the boilerplate 2) Troubleshooting code errors 3) Explaining what each aspect of the code is doing
 Leverage Chat GPT to answer nuanced questions about your Bot.
 
-If you are new to algorithmic trading, this is an excellent start and will push you immeasurably forward in your algorithmic trading journey. 
+If you are new to algorithmic trading, this is an excellent start and will push you immeasurably forward in your algorithmic trading journey.
+
+---
 
 ## 1. Getting Started 🚀
 The code is setup to plug and play (update your strategies of course). To begin, you need to set up your API keys:
@@ -33,6 +35,8 @@ Section 4: Test DataFrame Config
 Section 5: Main Function (Add strategies here)
 ```
 The only sections you will need to modify (unless your adding indicators or testing how the test df (hist_data_raw) will update is section 2 and section 5).
+
+---
   
 ## 2. Adusting Global Parameters for Script Optimization 🧑‍💻
 Section 2 is where you will update your start/end times, indicator values, and trailing stop params.
@@ -94,6 +98,8 @@ Take Profit / Stop Loss Params
 '''
 trail_pct = 2.0
 ```
+
+---
 
 ## 3. Configuring and running sample strategies 📊
 Section 5 is where you will provide your strategy logic.
@@ -159,6 +165,9 @@ if ((lag1_macd > lag1_macd_signal and cur_macd < cur_macd_signal) and \
 ```
 
 Have an idea? Build it, Test it, Validate it.
+
+---
+
 ## 4. Adding more Bars and Indicators 🔎
 
 Section 3 is where you will add more indicators if you desire. If you have an idea, copy and paste an indicator function from the boilerplate and ask gpt to format the function the same and create a new indicator (xyz indicator).
@@ -210,5 +219,7 @@ Get funky:
  lag1_rolling_avg_high = lag1_period_data['rolling_avg_high_price']
  lag1_rolling_avg_low = lag1_period_data['rolling_avg_low_price']
 ```
+
+---
 
 ## 5. Backtesting Overview 💻
