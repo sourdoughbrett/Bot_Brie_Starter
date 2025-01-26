@@ -50,13 +50,13 @@ To get started, ensure you have the required dependencies and tools installed. T
 
 ---
 
-## **3. Project Structure** 💻
-All back-testing script timeframes can be customized (1m, daily, weekly, etc.) 
+## **3. Project Structure** 🚀
+All boilerplate AND back-testing script timeframes can be customized (1m, daily, weekly, etc.). 
 
 **Remember you need an Alpaca Market Subscription to access historical bars within 15 minutes of real-time data.**
 
 The repository is organized as follows:
-🚀
+
 ```plaintext
 Starter-Package-Repo/
 ├── scripts/
@@ -176,7 +176,7 @@ Below is a breakdown of the main intra-script code sections:
 
 ---
 
-## **5. Bot Tutorials**
+## **5. Bot Tutorials** 💻
 Learn how to leverage the boilerplate to design and test your own trading strategies. The Bot Tutorials guide provides step-by-step instructions for:
 - Getting Started.
 - Adjusting global parameters for script optimization.
