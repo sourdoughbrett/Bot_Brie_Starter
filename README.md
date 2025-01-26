@@ -110,11 +110,10 @@ The `docs/` directory contains detailed guides and reference materials to help u
 
 - **`Environment_Setup.md`**: Step-by-step guide for setting up your environment, including:
   - Installing the Anaconda distribution.
-  - Configuring the Spyder IDE for seamless script execution.
+  - Configuring the Spyder IDE.
   - Verifying and managing Python dependencies.
 
 - **`Bot_Tutorials.md`**: Practical examples and tutorials for implementing various trading strategies, including:
-  - How TradingView will transform your algorithmic strategies (see blog too).
   - Getting started with the Bot.
   - Configuring and running sample strategies.
   - Creating and customizing backtesting scenarios.
@@ -134,11 +133,11 @@ All boilerplate AND back-testing scripts have the same structure.
 Below is a breakdown of the main intra-script code sections:
 
 ### **Section 1: Installing Modules and Imports**
-- Setup Spyder IDE and Anaconda for your development environment.
+- Import all packages and dependencies.
 - Includes YML configuration for API keys and user-selected global variables.
-- Set paper=True or False for paper/live trading (update api_base_url accordingly)
+- Set paper=True or False for paper/live trading (update api_base_url accordingly).
 
-### **Section 2: Global Variables**
+### **Section 2: Global/Key Variable Settings**
 - Define key variables such as:
   - Timeframes (1m, 15m, 1h, 1d, 1w)
   - Start/End Times (down to the millisecond)
@@ -152,7 +151,7 @@ Below is a breakdown of the main intra-script code sections:
 - **Rolling Averages**: Utility functions for calculating rolling averages.
 - **Supportive Functions**: Helper functions for trading logic and API integration.
 
-### **Section 4: Test DataFrame (hist_data_raw)**
+### **Section 4: Test DataFrame Config (hist_data_raw)**
 - Append all indicator and bar data to the `hist_data_raw` DataFrame.
 - Access the DataFrame in Spyder to ensure data updates correctly.
 - Prints the DataFrame output in the script.
