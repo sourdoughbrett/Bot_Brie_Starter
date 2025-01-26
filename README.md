@@ -80,12 +80,12 @@ Starter-Package-Repo/
 
 ### **a. Boilerplate Scripts**
 Live trading scripts located in `scripts/boilerplate/`:
-- **Trailing_Stop_OHLC.py**: Implements trailing stop logic for live trading (daily timeframe example)
+- **Trailing_Stop_OHLC.py**: Implements trailing stop logic for live trading (hourly timeframe example)
 - **Heikin_Ashi_Swing_Alert.py**: Example script of a swing alert strategy with Heikin Ashi bars (daily timeframe example).
 
 ### **b. Backtesting Scripts**
 Backtesting scripts located in `scripts/backtest/`:
-- **OHLC.py**: Backtest strategies on traditional OHLC bars (daily timeframe).
+- **OHLC.py**: Backtest strategies on traditional OHLC bars (hourly timeframe).
 - **Heikin_Ashi.py**: Backtest strategies on Heikin Ashi bars (daily timeframe).
 
 ### **c. Configuration Files**
