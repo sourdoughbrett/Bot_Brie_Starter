@@ -101,7 +101,7 @@ trail_pct = 2.0
 
 ---
 
-## 3. Configuring and running sample strategies 📊
+## 3. Configuring and running your Trading Strategy 📊
 Section 5 is where you will provide your strategy logic.
 
 This strategy takes a position when the PSAR (trend following indicator) changes direction while the RSI is underneath or over a certain threshold.
@@ -175,17 +175,79 @@ Section 3 is where you will add more indicators if you desire. If you have an id
 Example:
 1) Copy the MACD function
 2) Begin to write in Chat GPT.. "Please create "xyz" indicator (LazyBear Momentum) from "zyx" (TradingView/TA-Lib) and format function precisely like my MACD function, here is my MACD function: (paste MACD function)"
-3) Verify Output is valid and the function returns a DataFrame or Series.
-4) Add the df to the hist_data_raw df for testing.
-5) If hist_data_raw df is valid, then append to stock_data in main func:
 
-     ```plaintext
-       rsi_series = calculate_rsi(df=stock_data, column='HA_close', period=14)
-       stock_data['RSI'] = rsi_series
+```plaintext
+def calculate_momentum(df, column="HA_close", bollinger_period=20, keltner_period=20, momentum_period=14):
+    """
+    Calculate the LazyBear Momentum Indicator using Bollinger Bands, Keltner Channels, and Momentum Oscillator.
+
+    Args:
+        df (pandas.DataFrame): DataFrame containing the price data.
+        column (str): Name of the column in the DataFrame that contains the prices. Default is "HA_close".
+        bollinger_period (int): Number of periods to consider for Bollinger Bands. Default is 20.
+        keltner_period (int): Number of periods to consider for Keltner Channels. Default is 20.
+        momentum_period (int): Number of periods to consider for the Momentum Oscillator. Default is 14.
+
+    Returns:
+        pandas.DataFrame: DataFrame containing the Squeeze Indicator and Momentum Histogram.
+    """
+    # Calculate Bollinger Bands
+    df["bollinger_mid"] = df[column].rolling(window=bollinger_period).mean()
+    df["bollinger_std"] = df[column].rolling(window=bollinger_period).std()
+    df["bollinger_upper"] = df["bollinger_mid"] + 2 * df["bollinger_std"]
+    df["bollinger_lower"] = df["bollinger_mid"] - 2 * df["bollinger_std"]
+
+    # Calculate Keltner Channels
+    df["keltner_mid"] = df[column].rolling(window=keltner_period).mean()
+    df["keltner_atr"] = df["bollinger_std"].rolling(window=keltner_period).mean()  # Approximation for ATR
+    df["keltner_upper"] = df["keltner_mid"] + 1.5 * df["keltner_atr"]
+    df["keltner_lower"] = df["keltner_mid"] - 1.5 * df["keltner_atr"]
+
+    # Squeeze Indicator: Bollinger Bands inside Keltner Channels
+    df["squeeze_on"] = (
+        (df["bollinger_upper"] < df["keltner_upper"]) & 
+        (df["bollinger_lower"] > df["keltner_lower"])
+    )
+
+    # Momentum Oscillator
+    df["momentum"] = df[column].diff(momentum_period)
+
+    # Signal: Color Histogram for Momentum
+    df["momentum_histogram"] = df["momentum"].rolling(window=5).mean()
+
+    # Select and return relevant columns
+    momentum_df = pd.DataFrame({
+        "bollinger_upper": df["bollinger_upper"],
+        "bollinger_lower": df["bollinger_lower"],
+        "keltner_upper": df["keltner_upper"],
+        "keltner_lower": df["keltner_lower"],
+        "squeeze_on": df["squeeze_on"],
+        "momentum_histogram": df["momentum_histogram"]
+    }, index=df.index)
+
+    return momentum_df
+```
+
+4) Verify Output is valid and the function returns a DataFrame or Series (momentum_df).
+5) Append momentum_df to the hist_data_raw df for testing.
+
+        ```plaintext
+     momentum_df = calculate_momentum(df=hist_data_raw, column="close", bollinger_period=20, keltner_period=20, momentum_period=14)
+     hist_data_raw['bollinger_upper'] = momentum_df['bollinger_upper']
+     hist_data_raw['bollinger_lower'] = momentum_df['bollinger_lower']
+     hist_data_raw['keltner_upper'] = momentum_df['keltner_upper']
+     hist_data_raw['keltner_lower'] = momentum_df['keltner_lower']
+     hist_data_raw["squeeze_on"] = momentum_df["squeeze_on"]
+     hist_data_raw['momentum_histogram'] = momentum_df['momentum_histogram']
      ```
+6) Run script, check the hist_data_raw df to ensure all data is updated appropriately.
+7) If hist_data_raw df is valid, then append to stock_data within the main function of section 5 and begin to create your strategies around this indicator, Example, if squeeze_on == True, go long, etc.
 
-Bars is pretty straight forward. All data is appended to symbol_data (this includes all bar and indicator information. Everything.)
-Add your bars:
+---
+
+Bars is pretty straight forward. All data is appended to symbol_data (this includes all bar and indicator information, everything).
+
+1) Add your bars:
 ```plaintext
  symbol_data = stock_data.loc[symbol] # Get data for the current symbol (symbol data is where ALL of our data will be stored)
  cur_period_data = symbol_data.iloc[-1] # Getting most recent row of data (Creating the timeseries data by time increment relative to real-time, these will become our bar increments)
@@ -202,7 +264,7 @@ Add your bars:
  cur_bar_data_low = cur_period_data['HA_low'] # Get the last row high price on the bar
 ```
 
-Make your own bars:
+2) Make your own bars:
 ```plaintext
  # Avg HLC Data
  cur_avg_hlc = ((cur_bar_data + cur_bar_data_high + cur_bar_data_low)/3)
@@ -211,7 +273,7 @@ Make your own bars:
  cur_avg_hc = ((cur_bar_data + cur_bar_data_high)/2)
 ```
 
-Get funky:
+3) Get funky:
 ```plaintext
  # Rolling Avg High/Low Bar Data
  cur_rolling_avg_high = cur_period_data['rolling_avg_high_price'] #pulling from rolling_avg_low func
@@ -223,3 +285,43 @@ Get funky:
 ---
 
 ## 5. Backtesting Overview 💻
+
+1.	Open the `backtest_config.yml` file located in the `/config` directory.
+2.	Add Alpaca Keys to yml file, update ib (initial balance), tp_pct, sl_pct, and date times.
+        - The backtesting chart is designed for 1 symbol per backtest, encouraged to test 1 symbol at a time.
+3.   Open the `OHLC.py` file located in the `/scripts/backtest/` directory.
+4.   Update ‘config_file_path’ in `/scripts/backtest/` to yml filepath (ex: "C:/Users/.../..../scripts/backtest_config.yml").
+
+The structure of the back-testing script is the exact same as the boilerplate script except section 5 now becomes where we add our strategy logic.
+
+Within the generate_signals function, you will add your strategy logic. Here is an example of creating a backtest with the follow crossover strategy with the MACD and Heikin Ashi.
+
+```plaintext
+# Define the trading logic
+def generate_signals(df):
+    """Generate buy and sell signals based on the provided trading logic."""
+    signals = pd.DataFrame(index=df.index)
+    signals['signal'] = 0
+
+    for i in range(0, len(df)):
+        lag2 = df.iloc[i - 3] # lag 2 bar
+        lag1 = df.iloc[i - 2] # lag 1 bar
+        cur = df.iloc[i - 1] # current bar
+
+        # LONG BACKTEST LOGIC PLACED HERE
+        if ((lag1['macd'] < lag1['signal'] and cur['macd'] > cur['signal']) and
+            (lag1['color'] == 'red' and cur['color'] == 'green')):
+            # LONG BACKTEST LOGIC ENDS HERE
+            signals.at[cur.name, 'signal'] = 1
+            
+        # SHORT BACKTEST LOGIC PLACED HERE
+        if ((lag1['macd'] > lag1['signal'] and cur['macd'] < cur['signal']) and
+            (lag1['color'] == 'green' and cur['color'] == 'red')):
+            # SHORT BACKTEST LOGIC ENDS HERE
+            signals.at[cur.name, 'signal'] = -1 
+
+    return signals
+```
+Now, I can run the backtest on different timeframes, tp/sl parameters, indicator values, and datetimes to test for efficacy. 
+
+Align with your strategy idea to hone in on a profitable idea or system 🎯
