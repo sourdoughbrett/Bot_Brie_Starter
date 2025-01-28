@@ -231,15 +231,16 @@ def calculate_momentum(df, column="HA_close", bollinger_period=20, keltner_perio
 4) Verify Output is valid and the function returns a DataFrame or Series (momentum_df).
 5) Append momentum_df to the hist_data_raw df for testing.
 
-        ```plaintext
-     momentum_df = calculate_momentum(df=hist_data_raw, column="close", bollinger_period=20, keltner_period=20, momentum_period=14)
-     hist_data_raw['bollinger_upper'] = momentum_df['bollinger_upper']
-     hist_data_raw['bollinger_lower'] = momentum_df['bollinger_lower']
-     hist_data_raw['keltner_upper'] = momentum_df['keltner_upper']
-     hist_data_raw['keltner_lower'] = momentum_df['keltner_lower']
-     hist_data_raw["squeeze_on"] = momentum_df["squeeze_on"]
-     hist_data_raw['momentum_histogram'] = momentum_df['momentum_histogram']
-     ```
+```plaintext
+momentum_df = calculate_momentum(df=hist_data_raw, column="close", bollinger_period=20, keltner_period=20, momentum_period=14)
+hist_data_raw['bollinger_upper'] = momentum_df['bollinger_upper']
+hist_data_raw['bollinger_lower'] = momentum_df['bollinger_lower']
+hist_data_raw['keltner_upper'] = momentum_df['keltner_upper']
+hist_data_raw['keltner_lower'] = momentum_df['keltner_lower']
+hist_data_raw["squeeze_on"] = momentum_df["squeeze_on"]
+hist_data_raw['momentum_histogram'] = momentum_df['momentum_histogram']
+```
+
 6) Run script, check the hist_data_raw df to ensure all data is updated appropriately.
 7) If hist_data_raw df is valid, then append to stock_data within the main function of section 5 and begin to create your strategies around this indicator, Example, if squeeze_on == True, go long, etc.
 
