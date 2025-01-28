@@ -177,7 +177,7 @@ Example:
 2) Begin to write in Chat GPT.. "Please create "xyz" indicator (LazyBear Momentum) from "zyx" (TradingView/TA-Lib) and format function precisely like my MACD function, here is my MACD function: (paste MACD function)"
 
 ```plaintext
-def calculate_momentum(df, column="HA_close", bollinger_period=20, keltner_period=20, momentum_period=14):
+def calculate_momentum(df, column="close", bollinger_period=20, keltner_period=20, momentum_period=14):
     """
     Calculate the LazyBear Momentum Indicator using Bollinger Bands, Keltner Channels, and Momentum Oscillator.
 
