@@ -176,6 +176,7 @@ Example:
 1) Copy the MACD function
 2) Begin to write in Chat GPT.. "Please create "xyz" indicator (LazyBear Momentum) from "zyx" (TradingView/TA-Lib) and format function precisely like my MACD function, here is my MACD function: (paste MACD function)"
 
+Chat GPT/Deepseek Output:
 ```plaintext
 def calculate_momentum(df, column="close", bollinger_period=20, keltner_period=20, momentum_period=14):
     """
