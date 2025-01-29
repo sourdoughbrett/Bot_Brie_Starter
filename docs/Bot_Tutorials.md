@@ -170,7 +170,7 @@ Have an idea? Build it, Test it, Validate it.
 
 ## 4. Adding more Bars and Indicators 🔎
 
-Section 3 is where you will add more indicators if you desire. If you have an idea, copy and paste an indicator function from the boilerplate and ask gpt to format the function the same and create a new indicator (xyz indicator).
+Section 3 is where you will add more indicators if you desire. If you have an idea, build your own function, ask chat gpt to help build a function, etc.
 
 Example:
 1) Copy the MACD function
