@@ -174,7 +174,7 @@ Section 3 is where you will add more indicators if you desire. If you have an id
 
 Example:
 1) Copy the MACD function
-2) Begin to write in Chat GPT.. "Please create "xyz" indicator (LazyBear Momentum) from "zyx" (TradingView/TA-Lib) and format function precisely like my MACD function, here is my MACD function: (paste MACD function)"
+2) Begin to write in Chat GPT/Deepseek.. "Please create "xyz" indicator (LazyBear Momentum) from "zyx" (TradingView/TA-Lib) and format function precisely like my MACD function, here is my MACD function: (paste MACD function)"
 
 Chat GPT/Deepseek Output:
 ```plaintext
@@ -327,3 +327,11 @@ def generate_signals(df):
 Now, I can run the backtest on different timeframes, tp/sl parameters, indicator values, and datetimes to test for efficacy. 
 
 Align with your strategy idea to hone in on a profitable idea or system 🎯
+
+## Bonus (Build your ML Algorithm) 🚧
+
+By accessing the Alpaca API users have access to thousands of rows and columns of historical bar data. Perfect for building an LSTM model for timeseries predictions.
+
+What if you could build a model that updated every hour that was forecasting the price of a particular asset for the next hour? What if efficacy can be found based on more data points? How would this transform your strategies?
+
+To be announced!
