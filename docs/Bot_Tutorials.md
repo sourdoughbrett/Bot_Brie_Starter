@@ -5,7 +5,7 @@ Firstly, I want to say thank you for purchasing this product. I hope you find im
 This code is designed to be refactored, modularized, altered and used in ANY way you see fit. This is a boilerplate product, an outline or shell if you will. As comprehensive as it is, it is still may be missing a feature or two you deem critical and important. 
 
 There are no limitations to what you can do with the boilerplate, I encourage you to make the bot better if you see a path to do so.
-With that said, Chat GPT and other AI tools can be your best friend in 1) Adding features to the boilerplate 2) Troubleshooting code errors 3) Explaining what each aspect of the code is doing
+With that said, Chat GPT/DeepSeek and other AI tools can be your best friend in 1) Adding features to the boilerplate 2) Troubleshooting code errors 3) Explaining what each aspect of the code is doing
 Leverage Chat GPT to answer nuanced questions about your Bot.
 
 If you are new to algorithmic trading, this is an excellent start and will push you immeasurably forward in your algorithmic trading journey.
@@ -39,6 +39,8 @@ The only sections you will need to modify (unless your adding indicators or test
 ---
   
 ## 2. Adusting Global Parameters for Script Optimization 🧑‍💻
+Open the `/Trailing_Stop_OHLC.py` file located in the `/scripts/boilerplate` directory.
+
 Section 2 is where you will update your start/end times, indicator values, and trailing stop params.
 
 ```plaintext
@@ -242,8 +244,9 @@ hist_data_raw["squeeze_on"] = momentum_df["squeeze_on"]
 hist_data_raw['momentum_histogram'] = momentum_df['momentum_histogram']
 ```
 
-6) Run script, check the hist_data_raw df to ensure all data is updated appropriately.
-7) If hist_data_raw df is valid, then append to stock_data within the main function of section 5 and begin to create your strategies around this indicator, Example, if squeeze_on == True, go long, etc.
+6) Run script, check the hist_data_raw df to ensure all data is updated properly.
+7) If hist_data_raw df is valid, then append to stock_data within the main function of section 5 and begin to create your strategies around this indicator (E.G. if squeeze_on == True, go long).
+8) Test in main_func before deploying. Always test thoroughly...
 
 ---
 
