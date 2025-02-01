@@ -17,7 +17,6 @@ The code is setup to plug and play (update your strategies of course). To begin,
 1.	Open the `boilerplate_config.yml` file located in the `/config` directory.
 2.	Add Alpaca Keys to yml file
 ```plaintext
-# Alpaca Keys
 API_KEY: ''
 SECRET_KEY: ''
 api_base_url: 'https://paper-api.alpaca.markets'
