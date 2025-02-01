@@ -51,7 +51,7 @@ To get started, ensure you have the required dependencies and tools installed. T
 ---
 
 ## **3. Project Structure** 🚀
-All boilerplate AND back-testing script timeframes can be customized (1m, 15m, 1h, daily, weekly, etc.). 
+The boilerplate AND back-testing scripts timeframes can be customized (1m, 15m, 1h, daily, weekly, etc.). 
 
 **Remember you need an Alpaca Market Subscription to access historical bars within 15 minutes of real-time data.**
 
