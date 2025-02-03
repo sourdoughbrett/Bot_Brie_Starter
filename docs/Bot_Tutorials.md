@@ -12,7 +12,7 @@ If you are new to algorithmic trading, this is an excellent start and will push 
 
 ---
 
-## 1. Getting Started 🚀
+## 1️⃣ Getting Started 🚀
 The code is setup to plug and play (update your strategies of course). To begin, you need to set up your API keys:
 1.	Open the `boilerplate_config.yml` file located in the `/config` directory.
 2.	Add Alpaca Keys to yml file
@@ -37,7 +37,7 @@ The only sections you will need to modify (unless your adding indicators or test
 
 ---
   
-## 2. Adusting Global Parameters for Script Optimization 🧑‍💻
+## 2️⃣ Adusting Global Parameters for Script Optimization 🧑‍💻
 Open the `/Trailing_Stop_OHLC.py` file located in the `/scripts/boilerplate` directory.
 
 Section 2 is where you will update your start/end times, indicator values, and trailing stop params.
@@ -102,7 +102,7 @@ trail_pct = 2.0
 
 ---
 
-## 3. Configuring and running your Trading Strategy 📊
+## 3️⃣ Configuring and running your Trading Strategy 📊
 Section 5 is where you will provide your strategy logic.
 
 This strategy takes a position when the PSAR (trend following indicator) changes direction while the RSI is underneath or over a certain threshold.
@@ -169,7 +169,7 @@ Have an idea? Build it, Test it, Validate it.
 
 ---
 
-## 4. Adding more Bars and Indicators 🔎
+## 4️⃣ Adding more Bars and Indicators 🔎
 
 Section 3 is where you will add more indicators if you desire. If you have an idea, build your own function, ask chat gpt to help build a function, etc.
 
@@ -288,7 +288,7 @@ Bars is pretty straight forward. All data is appended to symbol_data (this inclu
 
 ---
 
-## 5. Backtesting Overview 💻
+## 5️⃣ Backtesting Overview 💻
 
 1.	Open the `backtest_config.yml` file located in the `/config` directory.
 2.	Add Alpaca Keys to yml file, update ib (initial balance), tp_pct, sl_pct, and date times.
@@ -332,7 +332,7 @@ To add more bars for backtesting, add lag3, lag4, lag5, etc. with the same forma
 
 Align with your strategy idea to hone in on a profitable idea or system 🎯
 
-## Bonus (Build your ML Algorithm) 🚧
+## 🎁 Bonus (Build your ML Algorithm) 🚧
 
 By accessing the Alpaca API users have access to thousands of rows and columns of historical bar data. Perfect for building an LSTM model for timeseries predictions.
 
