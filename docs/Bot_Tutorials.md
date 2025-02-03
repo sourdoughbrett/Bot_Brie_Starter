@@ -326,7 +326,7 @@ def generate_signals(df):
 
     return signals
 ```
-Now, I can run the backtest on different timeframes, tp/sl parameters, indicator values, and datetimes to test for efficacy.
+Now, you can run the backtest on different timeframes, tp/sl parameters, indicator values, and datetimes to test for efficacy.
 
 To add more bars for backtesting, add lag3, lag4, lag5, etc. with the same formatting as cur, lag1, ang lag2 above.
 
