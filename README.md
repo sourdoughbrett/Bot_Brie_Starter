@@ -28,7 +28,7 @@ Follow these steps to create an Alpaca account and obtain your API keys:
 
 ---
 
-## **1. Overview** 📣
+## **1️⃣ Overview** 📣
 The Bot Brie All-In Boilerplate is a powerful, customizable trading framework designed to help you automate trading strategies using Alpaca’s API. This package supports:
 - **Trailing_Stops** for dynamic risk management.
 - **Multiple Timeframes** for flexible strategy implementation (e.g., 1m, 15m, 1h, daily bars).
@@ -43,14 +43,14 @@ Remember, always thoroughly forward and backtest for strategy efficacy before la
 
 ---
 
-## **2. Environment Setup** 🧑‍💻
+## **2️⃣ Environment Setup** 🧑‍💻
 To get started, ensure you have the required dependencies and tools installed. This includes setting up your Python environment with Anaconda and configuring the Spyder IDE for efficient coding and testing.
 
 👉 **[View Full Environment Setup Guide](docs/Environment_Setup.md)**
 
 ---
 
-## **3. Project Structure** 🚀
+## **3️⃣ Project Structure** 🚀
 The boilerplate AND back-testing scripts timeframes can be customized (1m, 15m, 1h, daily, weekly, etc.). 
 
 **Remember you need an Alpaca Market Subscription to access historical bars within 15 minutes of real-time data.**
@@ -78,17 +78,17 @@ Starter-Package-Repo/
 └── CHANGELOG.md
 ```
 
-### **a. Boilerplate Scripts**
+### **A. Boilerplate Scripts**
 Live trading scripts located in `scripts/boilerplate/`:
 - **Trailing_Stop_OHLC.py**: Implements trailing stop logic for live trading (hourly timeframe example)
 - **Heikin_Ashi_Swing_Alert.py**: Example script of a swing alert strategy with Heikin Ashi bars (daily timeframe example).
 
-### **b. Backtesting Scripts**
+### **B. Backtesting Scripts**
 Backtesting scripts located in `scripts/backtest/`:
 - **OHLC.py**: Backtest strategies on traditional OHLC bars (hourly timeframe).
 - **Heikin_Ashi.py**: Backtest strategies on Heikin Ashi bars (daily timeframe).
 
-### **c. Configuration Files**
+### **C. Configuration Files**
 
 The `config/` directory contains YAML configuration files that store critical settings and parameters used by the scripts. These files help centralize and streamline the configuration process, making it easier to manage and update your trading environment. Key details include:
 
@@ -102,7 +102,7 @@ The `config/` directory contains YAML configuration files that store critical se
 **Note:** To protect sensitive information like API keys, always keep these configuration files secure and avoid sharing them publicly. It’s recommended to use `.gitignore` to exclude these files from version control if you are using Git for your project.
 
 
-### **d. Documentation Files**
+### **D. Documentation Files**
 
 The `docs/` directory contains detailed guides and reference materials to help users get started and maximize the potential of the Bot Brie Boilerplate:
 
@@ -127,7 +127,7 @@ The `docs/` directory contains detailed guides and reference materials to help u
 
 ---
 
-## **4. Boilerplate/Backtest Sections** 📚
+## **4️⃣ Boilerplate/Backtest Sections** 📚
 All boilerplate AND back-testing scripts have the same structure. 
 
 Below is a breakdown of the main intra-script code sections:
@@ -175,7 +175,7 @@ Below is a breakdown of the main intra-script code sections:
 
 ---
 
-## **5. Bot Tutorials** 💻
+## **5️⃣ Bot Tutorials** 💻
 Learn how to leverage the boilerplate to design and test your own trading strategies. The Bot Tutorials guide provides step-by-step instructions for:
 - Getting Started.
 - Adjusting global parameters for script optimization.
@@ -187,7 +187,7 @@ Learn how to leverage the boilerplate to design and test your own trading strate
 
 ---
 
-## **6. Support and Troubleshooting** 🛡️
+## **6️⃣ Support and Troubleshooting** 🛡️
 If you encounter any issues or have questions, please refer to our troubleshooting guide or reach out to our support team.
 
 ### **Common Troubleshooting Tips:**
