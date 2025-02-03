@@ -78,17 +78,17 @@ Starter-Package-Repo/
 └── CHANGELOG.md
 ```
 
-### **A. Boilerplate Scripts**
+### **a.) Boilerplate Scripts**
 Live trading scripts located in `scripts/boilerplate/`:
 - **Trailing_Stop_OHLC.py**: Implements trailing stop logic for live trading (hourly timeframe example)
 - **Heikin_Ashi_Swing_Alert.py**: Example script of a swing alert strategy with Heikin Ashi bars (daily timeframe example).
 
-### **B. Backtesting Scripts**
+### **b.) Backtesting Scripts**
 Backtesting scripts located in `scripts/backtest/`:
 - **OHLC.py**: Backtest strategies on traditional OHLC bars (hourly timeframe).
 - **Heikin_Ashi.py**: Backtest strategies on Heikin Ashi bars (daily timeframe).
 
-### **C. Configuration Files**
+### **c.) Configuration Files**
 
 The `config/` directory contains YAML configuration files that store critical settings and parameters used by the scripts. These files help centralize and streamline the configuration process, making it easier to manage and update your trading environment. Key details include:
 
@@ -102,7 +102,7 @@ The `config/` directory contains YAML configuration files that store critical se
 **Note:** To protect sensitive information like API keys, always keep these configuration files secure and avoid sharing them publicly. It’s recommended to use `.gitignore` to exclude these files from version control if you are using Git for your project.
 
 
-### **D. Documentation Files**
+### **d.) Documentation Files**
 
 The `docs/` directory contains detailed guides and reference materials to help users get started and maximize the potential of the Bot Brie Boilerplate:
 
