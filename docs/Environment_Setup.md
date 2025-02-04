@@ -19,15 +19,13 @@ If you do not have Anaconda installed, follow these steps to set it up:
    Open the **Anaconda Prompt** and type:
    conda --version
 
-If installed correctly, this will display the installed version of conda.
-
 ## **Installing the Spyder IDE**
-Spyder is a scientific Python development environment that integrates seamlessly with Anaconda. Follow these steps to install and configure Spyder (5.15>):
+Spyder is a scientific Python development environment that integrates seamlessly with Anaconda. Follow these steps to install and configure Spyder (5.50> which should be the default version):
 
 1. **Install Spyder:**  
    Open the Anaconda Prompt and run the following command:
    ```plaintext
-   conda install spyder=5.15 -c conda-forge -y
+   conda install spyder=5.50 -c conda-forge -y
    ```
    
 2. **Verify Installation**  
@@ -71,7 +69,6 @@ Run the following commands to create and activate a new environment:
 Replace 'env_name' with your preferred environment name
 conda create -n env_name python=3.10 -y
 conda activate env_name
-
 ```
 
 ### **2. Install Conda-Compatible Packages**
@@ -90,7 +87,6 @@ pip install alpaca-py alpaca-trade-api aiohttp websockets websocket-client pydan
 Check that all packages are correctly installed by running:
 ```
 pip freeze
-
 ```
 This version ensures all the steps are properly formatted and easy to follow!
 
