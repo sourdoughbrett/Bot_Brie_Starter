@@ -91,8 +91,8 @@ minute_start_time = 33
 hour_end_time = 18
 minute_end_time = 15
 
-# elapsed bar time (how many seconds until after the bar data updates do you want the script to update?) Recommendation is 1 - 3 seconds.
-elapsed_bar_time = 1
+# polling interval is set for 1 second. Script updates automatically every 60 seconds. See Main func. Recommendation is 1 -30 seconds depending when during the candlestick you want to enter.
+polling_interval = 1
 
 '''
 INDICATOR VALUES (UPDATE BASED ON STRATEGY)
@@ -960,8 +960,8 @@ def main():
             next_min = (current_time + timedelta(minutes=1)).replace(second=0, microsecond=0)
             
             # Puts the script to sleep for a calculated duration until the next minute, ensuring the script operates efficiently.
-            # Calculate sleep time (1 - 3 seconds) till after the start of the next minute. See elapsed_bar_time in global variable settings
-            sleep_time = (next_min - current_time).seconds + elapsed_bar_time
+            # Calculate sleep time (1 - 30 seconds) till after the start of the next minute. See polling_interval in global variable settings
+            sleep_time = (next_min - current_time).seconds + polling_interval
             
             if combined_trade_count >= max_trade_attempts:
                 time.sleep(100)
