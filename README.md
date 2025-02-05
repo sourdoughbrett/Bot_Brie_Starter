@@ -143,7 +143,7 @@ Below is a breakdown of the main intra-script code sections:
   - Start/End Times (down to the millisecond)
   - Indicator values
   - Trailing Stop Percentage
-  - Elapsed Bar Time
+  - Polling Interval
 
 ### **Section 3: Key Functions**
 - **Bar Retrieval**: Functions to retrieve historical bars (e.g., Heiken Ashi for All-In version).
@@ -159,7 +159,7 @@ Below is a breakdown of the main intra-script code sections:
 ### **Section 5: Main Function**
 - ***For Live/Paper Trading:***
 - **Market Hours:** The script continuously checks the current time against the defined market start and end times in the Eastern timezone. Trading operations only occur within these hours.
-- **Data Retrieval:** Calls the Alpaca API to fetch historical stock data. Appends all data to `stock_data` for real-time processing.
+- **Data Retrieval:** Calls the Alpaca API to fetch historical stock data. Appends all data to `stock_data` for real-time processing. Updates every 60 seconds based on current main function settings.
 - **Open Positions Check:** The script verifies if there are any existing long or short positions to prevent holding simultaneous conflicting positions.
 - **Trade Execution Logic:** Implements trading logic (Long and Short) based on predefined conditions.
 - **Order Status Check:** Continuously monitors the status of placed orders to ensure they are filled or canceled.
