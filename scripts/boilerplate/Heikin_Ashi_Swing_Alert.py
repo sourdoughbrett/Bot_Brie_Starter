@@ -56,26 +56,21 @@ for property_name, value in account:
     print(f"\"{property_name}\":{value}")
    
 hist_data_client = StockHistoricalDataClient(API_KEY,SECRET_KEY) #key validation
-
 api = tradeapi.REST(API_KEY, SECRET_KEY, api_base_url, api_version='v2')
+
+# Daily Buying power
+daytrading_buying_power = int(round(float(account.daytrading_buying_power)))
+print(f"Day Trading Buying Power: ${daytrading_buying_power}")
+
+# add symbols here if you do not want to store them via YML config file
+# symbols = ['NVDA','TSLA','MSFT']
 
 # symbol list length
 num_of_symbols = len(symbols)
 print("-----------------------------------------")
 print(f"The number of tickers in this list are {num_of_symbols}")
 
-# Daily Buying power
-daytrading_buying_power = int(round(float(account.daytrading_buying_power)))
-print(f"Position sizes are currently set to: ${position_size}")
-print(f"Day Trading Buying Power: ${daytrading_buying_power}")
-
-# Max Trade Attempts
-max_trade_attempts = int(round(float(daytrading_buying_power/position_size)))
-
 ###################################Section 2: Global/Key Variable Settings#####################################
-
-# add symbols here if you do not want to store them via YML config file
-# symbols = ['NVDA','TSLA','MSFT']
 
 '''
 TIME VALUES (UPDATE BASED ON STRATEGY)
@@ -106,7 +101,7 @@ macd_signal_period_val = 2
 # EMA
 ema_fast_period_val = 3
 ema_mod_period_val =  6
-ema_slow_period_val = 200
+ema_slow_period_val = 20
 ema_20_period_val = 20
 # SMA
 sma_fast_period_val = 20
@@ -675,7 +670,6 @@ print(f'The start date for this code is {start_time}')
 print(f'The end date for this code is {end_time}')
 print("--------------------------")
 print("\n")
-print(f"Position sizes are currently set to: ${position_size}")
 print(f"Day Trading Buying Power: ${daytrading_buying_power}")
 print("--------------------------")
 print("\n")
@@ -912,12 +906,13 @@ def main():
                     # LONG TRADE ENTRY LOGIC ENDS HERE
                             try:
                                 print(f"(ENTERING) (Buying) long signal generated for {symbol} at price {cur_bar_data.round(2)}")
-                                qty = max(1, int(position_size / cur_bar_data))
-                                order = api.submit_order(symbol,
-                                                         qty,
-                                                         side='buy',
-                                                         type='market',
-                                                         time_in_force='gtc')
+                                qty = 1
+                                api.submit_order(symbol,
+                                                 qty,
+                                                 side='buy',
+                                                 type='limit',
+                                                 limit_price=cur_avg_hlc.round(2),
+                                                 time_in_force='gtc')
                                 print(f"(BOUGHT) Submitted limit buy order for {qty} shares in {symbol}")
                                 combined_trade_count += 1
                             except Exception as e:
@@ -936,12 +931,13 @@ def main():
                     # SHORT TRADE ENTRY LOGIC PLACED HERE
                             try:
                                 print(f"(ENTERING) (Selling) short signal generated for {symbol} at price {cur_bar_data.round(2)}")
-                                qty = max(1, int(position_size / cur_bar_data))
-                                order = api.submit_order(symbol, 
-                                                         qty, 
-                                                         side='sell',
-                                                         type='market',
-                                                         time_in_force='gtc')
+                                qty = 1
+                                api.submit_order(symbol,
+                                                 qty,
+                                                 side='sell',
+                                                 type='limit',
+                                                 limit_price=cur_avg_hlc.round(2),
+                                                 time_in_force='gtc')
                                 print(f"(BOUGHT) sell order for {qty} shares in {symbol}")
                                 combined_trade_count += 1
                             except Exception as e:
@@ -963,11 +959,6 @@ def main():
             # Calculate sleep time (1 - 30 seconds) till after the start of the next minute. See polling_interval in global variable settings
             sleep_time = (next_min - current_time).seconds + polling_interval
             
-            if combined_trade_count >= max_trade_attempts:
-                time.sleep(100)
-                print('MAX TRADE ATTEMPTS REACHED, PLEASE TURN OFF THE CODE UNTIL THE NEXT TRADING DAY.')
-                print('KEEP TESTING!!! :D')
-            print(f"Max trade attempts for this script iteration: {max_trade_attempts}")
             print(f"The number of tickers in this list are {num_of_symbols}")
             print("\n")
             print(f"This is a {bot_type} bot...")
@@ -993,7 +984,6 @@ if __name__ == '__main__':
 #################Code Complete#################
 
  
-
 
 
 
