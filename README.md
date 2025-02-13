@@ -39,7 +39,7 @@ Explore scripts for both live/paper trading and backtesting in the respective `s
 
 Remember, always thoroughly forward and backtest for strategy efficacy before launching live. 
 
-*Test ==> Feedback ==> Iterate ==> Improve*
+*Test ==> Feedback ==> Iterate ==> Improve ==> Repeat*
 
 ---
 
