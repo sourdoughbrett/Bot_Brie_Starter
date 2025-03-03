@@ -35,7 +35,6 @@ Section 3: Key Functions
 Section 4: Test DataFrame Config
 Section 5: Main Function (Add strategies here)
 ```
-The only sections you will need to modify (unless your adding indicators or testing how the test df (hist_data_raw) will update is section 2 and section 5).
 
 ---
   
@@ -122,11 +121,11 @@ if ((cur_bar_data < cur_psar and lag1_bar_data > lag1_psar) and \
     (cur_rsi > 70)):
 # SHORT TRADE EXIT LOGIC PLACED HERE
 ```
-So what exactly is going on?
+<u>So what exactly is going on?</u>
 
 When the script runs it updates every 60 seconds + the value of the "polling_interval" variable. In this case, 1 second after the minute bar elapses or updates. The main_function has a while loop condition that runs and checks the api for updates on this cycle pattern. 
 
-If you wanted to update the script more or less frequently, you would change next_min to your desired timeframe (ex: every 15 seconds, every 15 minutes, etc.).
+If you wanted to update the script more or less frequently, you would change next_min to your desired timeframe (ex: every 15 seconds, every 15 minutes, etc.) by modifying 'next_min" below.
 ```plaintext
 # Calculate seconds until the next minute starts
 # if using 2m,5m, etc. bars, minutes will need to match the timeframe value below
@@ -299,7 +298,7 @@ Bars is pretty straight forward. All data is appended to symbol_data (this inclu
 3.   Open the `OHLC.py` file located in the `/scripts/backtest/` directory.
 4.   Update ‘config_file_path’ in `/scripts/backtest/` to yml filepath (ex: "C:/Users/.../..../scripts/backtest_config.yml").
 
-The structure of the back-testing script is the exact same as the boilerplate script except section 5 now becomes where we add our strategy logic. Within the generate_signals function, you will add your strategy logic. 
+<u>The structure of the back-testing script is the exact same as the boilerplate script except section 5 now becomes where we add our strategy logic. Within the generate_signals function, you will add your strategy logic.</u>
 
 Here is an example of creating a backtest with the follow crossover strategy with the MACD and Heikin Ashi.
 ```plaintext
