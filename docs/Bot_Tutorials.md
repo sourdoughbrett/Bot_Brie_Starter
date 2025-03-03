@@ -122,9 +122,9 @@ if ((cur_bar_data < cur_psar and lag1_bar_data > lag1_psar) and \
 ```
 <u>So what exactly is going on?</u>
 
-When the script runs it updates every 60 seconds + the value of the 'polling_interval' variable. In this case, 1 second after the minute bar elapses or updates. The main_function has a while loop condition that runs and checks the api for updates on this cycle pattern. 
+When the script runs it updates every 60 seconds + the value of the `polling_interval` variable. In this case, 1 second after the minute bar elapses or updates. The main_function has a while loop condition that runs and checks the api for updates on this cycle pattern. 
 
-If you wanted to update the script more or less frequently, you would change next_min to your desired timeframe (ex: every 15 seconds, every 15 minutes, etc.) by modifying 'next_min" below.
+If you wanted to update the script more or less frequently, you would change `next_min` to your desired timeframe (ex: every 15 seconds, every 15 minutes, etc.).
 ```plaintext
 # Calculate seconds until the next minute starts
 # if using 2m,5m, etc. bars, minutes will need to match the timeframe value below
@@ -232,7 +232,7 @@ def calculate_momentum(df, column="close", bollinger_period=20, keltner_period=2
 ```
 
 4) Verify Output is valid and the function returns a DataFrame or Series (momentum_df).
-5) Append momentum_df to the hist_data_raw df for testing.
+5) Append momentum_df to the `hist_data_raw` df for testing.
 
 ```plaintext
 momentum_df = calculate_momentum(df=hist_data_raw, column="close", bollinger_period=20, keltner_period=20, momentum_period=14)
@@ -244,13 +244,13 @@ hist_data_raw["squeeze_on"] = momentum_df["squeeze_on"]
 hist_data_raw['momentum_histogram'] = momentum_df['momentum_histogram']
 ```
 
-6) Run script, check the hist_data_raw df to ensure all data is updated properly.
-7) If hist_data_raw df is valid, then append to stock_data within the main function of section 5 and begin to create your strategies around this indicator (E.G. if squeeze_on == True, go long).
-8) Test in main_func before deploying. Always test thoroughly...
+6) Run script, check the `hist_data_raw` df to ensure all data is updated properly.
+7) If `hist_data_raw` df is valid, then append to `stock_data` within the main function of section 5 and begin to create your strategies around this indicator (E.G. if squeeze_on == True, go long).
+8) Test main funtion by deploying the script in a paper account.
 
 ---
 
-Bars is pretty straight forward. All data is appended to symbol_data (this includes all bar and indicator information, everything).
+Bars is pretty straight forward. All data is appended to `symbol_data` (this includes all bar and indicator information, everything).
 
 1) Add your bars:
 ```plaintext
