@@ -10,7 +10,7 @@ If you are new to algorithmic trading, this is an excellent start and will push 
 ---
 
 ## 1️⃣ Getting Started 🚀
-The code is setup to plug and play (update your strategies of course). To begin, you need to set up your API keys:
+The code is setup to plug and play. To begin, you need to set up your API keys:
 1.	Open the `boilerplate_config.yml` file located in the `/config` directory.
 2.	Add Alpaca Keys to yml file
 ```plaintext
@@ -20,7 +20,12 @@ api_base_url: 'https://paper-api.alpaca.markets'
 ```
 3.	Update ‘config_file_path’ in `scripts/boilerplate/` to yml filepath (ex: "C:/Users/.../..../..../boilerplate_config.yml") 
 4.	Test the bot by running the program (Press F5) within the Spyder IDE. Alternatively you can run the script via the Anaconda Prompt, Command Line, or your own IDE system.
-     - If any errors are produced it likely has to do with the timeframe, start_date and end_date. Make sure the boundaries are appropriate depending on the timeframe used.
+5.	Please update the following accordingly if errors are produced:
+     - timeframe,
+     - start_date and end_date.
+     - buying_power
+     - api_keys
+     - symbols
   
 As laid out in the README file, the boilerplate is broken down into 5 sections:
 ```plaintext
@@ -128,6 +133,7 @@ If you wanted to update the script more or less frequently, you would change nex
 current_time = datetime.now()
 next_min = (current_time + timedelta(minutes=1)).replace(second=0, microsecond=0)
 ```
+
 ⏰
 Moving forward..!
 
