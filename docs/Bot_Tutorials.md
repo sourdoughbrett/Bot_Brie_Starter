@@ -106,8 +106,7 @@ trail_pct = 2.0
 ## 3️⃣ Configuring and running your Trading Strategy 📊
 Section 5 is where you will provide your strategy logic.
 
-This strategy takes a position when the PSAR (trend following indicator) changes direction while the RSI is underneath or over a certain threshold.
-
+This strategy takes a position when the PSAR changes direction while the RSI is underneath or over a certain threshold.
 ```plaintext
 # LONG TRADE ENTRY LOGIC PLACED HERE
 if ((cur_bar_data > cur_psar and lag1_bar_data < lag1_psar) and \
@@ -123,7 +122,7 @@ if ((cur_bar_data < cur_psar and lag1_bar_data > lag1_psar) and \
 ```
 <u>So what exactly is going on?</u>
 
-When the script runs it updates every 60 seconds + the value of the "polling_interval" variable. In this case, 1 second after the minute bar elapses or updates. The main_function has a while loop condition that runs and checks the api for updates on this cycle pattern. 
+When the script runs it updates every 60 seconds + the value of the 'polling_interval' variable. In this case, 1 second after the minute bar elapses or updates. The main_function has a while loop condition that runs and checks the api for updates on this cycle pattern. 
 
 If you wanted to update the script more or less frequently, you would change next_min to your desired timeframe (ex: every 15 seconds, every 15 minutes, etc.) by modifying 'next_min" below.
 ```plaintext
