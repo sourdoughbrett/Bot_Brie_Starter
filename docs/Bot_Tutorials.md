@@ -59,8 +59,8 @@ minute_start_time = 30
 hour_end_time = 15
 minute_end_time = 30
 
-# elapsed bar time (how many seconds until after the bar data updates do you want the script to update?) Recommendation is 1 - 3 seconds.
-elapsed_bar_time = 1
+# polling interval is set for 1 second. Script updates automatically every 60 seconds. See Main func. Recommendation is 1 -30 seconds depending when during the candlestick you want to enter.
+polling_interval = 1
 
 '''
 INDICATOR VALUES (UPDATE BASED ON STRATEGY)
@@ -119,7 +119,7 @@ if ((cur_bar_data < cur_psar and lag1_bar_data > lag1_psar) and \
 ```
 So what exactly is going on?
 
-When the script runs it updates every 60 seconds + the value of the "elapsed_bar_time" variable. In this case, 1 second after the minute bar elapses or updates. The main_function has a while loop condition that runs and checks the api for updates on this cycle pattern. 
+When the script runs it updates every 60 seconds + the value of the "polling_interval" variable. In this case, 1 second after the minute bar elapses or updates. The main_function has a while loop condition that runs and checks the api for updates on this cycle pattern. 
 
 If you wanted to update the script more or less frequently, you would change next_min to your desired timeframe (ex: every 15 seconds, every 15 minutes, etc.).
 ```plaintext
