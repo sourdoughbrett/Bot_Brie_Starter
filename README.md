@@ -1,4 +1,4 @@
-# **Bot Brie Starter Boilerplate**
+# **Bot Brie Starter Boilerplate** 🐈
 
 clone the repository to your local environment:
 ```plaintext
