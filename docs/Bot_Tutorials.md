@@ -297,7 +297,7 @@ Bars is pretty straight forward. All data is appended to `symbol_data` (this inc
 3.   Open the `OHLC.py` file located in the `/scripts/backtest/` directory.
 4.   Update ‘config_file_path’ in `/scripts/backtest/` to yml filepath (ex: "C:/Users/.../..../scripts/backtest_config.yml").
 
-<u>The structure of the back-testing script is the exact same as the boilerplate script except section 5 now becomes where we add our strategy logic. Within the generate_signals function, you will add your strategy logic.</u>
+The structure of the back-testing script is the exact same as the boilerplate script except section 5 now becomes where we add our strategy logic. Within the `generate_signals` function, you will add your strategy logic.
 
 Here is an example of creating a backtest with the follow crossover strategy with the MACD and Heikin Ashi.
 ```plaintext
