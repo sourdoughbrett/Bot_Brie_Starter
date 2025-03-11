@@ -21,8 +21,8 @@ api_base_url: 'https://paper-api.alpaca.markets'
 3.	Update ‘config_file_path’ in `scripts/boilerplate/` to yml filepath (ex: "C:/Users/.../..../..../boilerplate_config.yml") 
 4.	Test the bot by running the program (Press F5) within the Spyder IDE. Alternatively you can run the script via the Anaconda Prompt, Command Line, or your own IDE system.
 5.	Please update the following accordingly if errors are produced:
-     - timeframe,
-     - start_date and end_date.
+     - timeframe
+     - start_date and end_date
      - buying_power
      - api_keys
      - symbols
