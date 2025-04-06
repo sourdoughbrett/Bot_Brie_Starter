@@ -93,7 +93,7 @@ minute_start_time = 30
 hour_end_time = 15
 minute_end_time = 30
 
-# polling interval is set for 1 second. Script updates automatically every 60 seconds. See Main func. Recommendation is 1 -30 seconds depending on bar your latency and bar feed.
+polling_interval = 10 # polling interval is set for 1 second. Script updates automatically every 60 seconds. See Main func. Recommendation is 1 -30 seconds depending on bar your latency and bar feed.
 
 '''
 INDICATOR VALUES (UPDATE BASED ON STRATEGY)
