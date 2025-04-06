@@ -1,5 +1,5 @@
 '''
--This script contains a sample stochastic crossover strategy while the RSI is underneath a certain threshold.
+-This script contains a sample PSAR crossover strategy while the RSI is underneath a certain threshold.
 -This script uses OHLC (Open, High, Low, Close) Bars on a 1-day timeframe
 -This script has a custom exit and places Trailing Stop Orders for multiple methods of stop loss. Adjust with SL/TP settings (trail_pct)
 -Review Bot_Tutorials.md file
@@ -93,8 +93,7 @@ minute_start_time = 30
 hour_end_time = 15
 minute_end_time = 30
 
-# polling interval is set for 1 second. Script updates automatically every 60 seconds. See Main func. Recommendation is 1 -30 seconds depending when during the candlestick you want to enter.
-polling_interval = 1
+# polling interval is set for 1 second. Script updates automatically every 60 seconds. See Main func. Recommendation is 1 -30 seconds depending on bar your latency and bar feed.
 
 '''
 INDICATOR VALUES (UPDATE BASED ON STRATEGY)
