@@ -18,7 +18,7 @@ position_size: 10000
 # For example not all strategies may use the same timeframe or values for the MACD, etc.
 # Symbols/position_size could be local or in this yml file based on strategy.
 
-# Symbols (RECOMMENDATION: <50 symbols for intraday strategies per script and <500 symbols for daily strategies per script running. Run times will decline with more symbols and put more stress on alpacas servers)
+# Symbols (RECOMMENDATION: <100 symbols for intraday strategies per script and <1000 symbols for daily strategies per script running. Run times will decline with more symbols and put more stress on alpacas servers)
 
 symbols:
   - NVDA
