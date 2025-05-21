@@ -62,10 +62,8 @@ Starter-Package-Repo/
 ├── scripts/
 │   ├── boilerplate/
 │   │   ├── Trailing_Stop_OHLC.py        
-│   │   ├── Heikin_Ashi_Swing_Alert.py  
 │   ├── backtest/
-│   │   ├── OHLC.py                
-│   │   ├── Heikin_Ashi.py         
+│   │   ├── OHLC.py                        
 ├── config/
 │   ├── boilerplate_config.yml    
 │   ├── backtest_config.yml     
@@ -81,12 +79,10 @@ Starter-Package-Repo/
 ### **a.) Boilerplate Scripts**
 Live trading scripts located in `scripts/boilerplate/`:
 - **Trailing_Stop_OHLC.py**: Implements trailing stop logic for live trading (hourly timeframe example)
-- **Heikin_Ashi_Swing_Alert.py**: Example script of a swing alert strategy with Heikin Ashi bars (daily timeframe example).
 
 ### **b.) Backtesting Scripts**
 Backtesting scripts located in `scripts/backtest/`:
 - **OHLC.py**: Backtest strategies on traditional OHLC bars (hourly timeframe).
-- **Heikin_Ashi.py**: Backtest strategies on Heikin Ashi bars (daily timeframe).
 
 ### **c.) Configuration Files**
 
@@ -139,8 +135,8 @@ Below is a breakdown of the main intra-script code sections:
 
 ### **Section 2: Global/Key Variable Settings**
 - Define key variables such as:
-  - Timeframes (1m, 15m, 1h, 1d, 1w)
-  - Start/End Times (down to the millisecond)
+  - Timeframes (15m, 1h, 1d, 1w)
+  - Start/End Times
   - Indicator values
   - Trailing Stop Percentage
   - Polling Interval
@@ -203,3 +199,6 @@ For further assistance, feel free to reach us at:
 
 ## **License**
 This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## **DISCLAIMER**
+This software is for educational purposes only. USE THE SOFTWARE AT YOUR OWN RISK. THE AUTHORS AND ALL AFFILIATES ASSUME NO RESPONSIBILITY FOR YOUR TRADING RESULTS. Do not risk money that you are afraid to lose. There might be bugs in the code - this software DOES NOT come with ANY warranty.
