@@ -31,7 +31,7 @@ Follow these steps to create an Alpaca account and obtain your API keys:
 ## **1️⃣ Overview** 📣
 The Bot Brie All-In Boilerplate is a powerful, customizable trading framework designed to help you automate trading strategies using Alpaca’s API. This package supports:
 - **Trailing_Stops** for dynamic risk management.
-- **Multiple Timeframes** for flexible strategy implementation (1m, 15m, 1h, daily, etc).
+- **Multiple Timeframes** for flexible strategy implementation (15m, 1h, daily, weekly). 1m, 2m, 5m and custom timeframe strategies are available at [API Trade Builder](https://www.apitradebuilder.com/)
 - **Heikin Ashi Bars** for different bar formatting.
 - **Comprehensive Backtesting Tools** for strategy validation before live trading.
 
