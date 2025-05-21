@@ -1,6 +1,6 @@
 '''
--This script contains a sample PSAR crossover strategy while the RSI is underneath a certain threshold.
--This script uses OHLC (Open, High, Low, Close) Bars on a 1-day timeframe
+-This script contains a sample MACD crossover strategy while the RSI is underneath a certain threshold.
+-This script uses OHLC (Open, High, Low, Close) bar data on an hourly (60m) timeframe
 -This script has a custom exit and places Trailing Stop Orders for multiple methods of stop loss. Adjust with SL/TP settings (trail_pct)
 -Review Bot_Tutorials.md file
 -Review README.md
@@ -843,7 +843,7 @@ def main():
                 # Entry Criteria Long:
                 if not existing_long_pos and not existing_short_pos:
                     # LONG TRADE ENTRY LOGIC PLACED HERE
-                    if ((cur_bar_data > cur_psar and lag1_bar_data < lag1_psar) and \
+                    if ((lag1_macd < lag1_macd_signal and cur_macd > cur_macd_signal) and \
                         (cur_rsi < 30)):
                     # LONG TRADE ENTRY LOGIC ENDS HERE
                             try:
@@ -888,9 +888,9 @@ def main():
                 # Entry Criteria Short:
                 if not existing_long_pos and not existing_short_pos:
                     # SHORT TRADE ENTRY LOGIC PLACED HERE
-                    if ((cur_bar_data < cur_psar and lag1_bar_data > lag1_psar) and \
+                    if ((lag1_macd > lag1_macd_signal and cur_macd < cur_macd_signal) and \
                         (cur_rsi > 70)):
-                    # SHORT TRADE EXIT LOGIC PLACED HERE
+                    # SHORT TRADE ENTRY LOGIC ENDS HERE
                             try:
                                 # Place a limit sell order if conditions are met
                                 print(f"(ENTERING) (Selling) short signal generated for {symbol} at price {cur_bar_data.round(2)}")
