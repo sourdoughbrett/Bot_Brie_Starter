@@ -1,11 +1,10 @@
 '''
 -This script contains a sample MACD crossover strategy while the RSI is underneath a certain threshold.
 -This script uses OHLC (Open, High, Low, Close) bar data on an hourly (60m) timeframe
--This script has a custom exit and places Trailing Stop Orders for multiple methods of stop loss. Adjust with SL/TP settings (trail_pct)
+-This script places Trailing Stop Orders as a singular method of stop loss. Adjust with SL/TP settings (trail_pct)
 -Review Bot_Tutorials.md file
 -Review README.md
--*IMPORTANT* as with all scripts, make sure date parameters are set properly for the script or scripts your running. If not you will pull unnessary data or your code may not run how it should.
--*IMPORTANT* Never ever ever run a live strategy without forward testing in a paper account to find efficacy. Monitor closely and make sure parameters and dates are set properly.
+-*IMPORTANT* This software is for educational purposes only. USE THE SOFTWARE AT YOUR OWN RISK. THE AUTHORS AND ALL AFFILIATES ASSUME NO RESPONSIBILITY FOR YOUR TRADING RESULTS. Do not risk money that you are afraid to lose. There might be bugs in the code - this software DOES NOT come with ANY warranty.
 '''
 
 
