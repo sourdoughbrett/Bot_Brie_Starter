@@ -60,7 +60,8 @@ The repository is organized as follows:
 Starter-Package-Repo/
 ├── scripts/
 │   ├── boilerplate/
-│   │   ├── Trailing_Stop_OHLC.py        
+│   │   ├── Trailing_Stop_OHLC.py
+│   │   ├── Lazybear_Swing_OHLC.py
 │   ├── backtest/
 │   │   ├── OHLC.py                        
 ├── config/
