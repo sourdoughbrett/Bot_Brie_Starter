@@ -109,14 +109,14 @@ Section 5 is where you will provide your strategy logic.
 This strategy takes a position when the PSAR changes direction while the RSI is underneath or over a certain threshold.
 ```plaintext
 # LONG TRADE ENTRY LOGIC PLACED HERE
-if ((cur_bar_data > cur_psar and lag1_bar_data < lag1_psar) and \
+if ((lag1_bar_data < lag1_psar and cur_bar_data > cur_psar) and \
     (cur_rsi < 30)):
 # LONG TRADE ENTRY LOGIC ENDS HERE
 
 code...
 
 # SHORT TRADE ENTRY LOGIC PLACED HERE
-if ((cur_bar_data < cur_psar and lag1_bar_data > lag1_psar) and \
+if ((lag1_bar_data > lag1_psar and cur_bar_data < cur_psar) and \
     (cur_rsi > 70)):
 # SHORT TRADE EXIT LOGIC PLACED HERE
 ```
@@ -154,7 +154,7 @@ Finding confluences of signals can be lead to better outcomes as well:
 # LONG TRADE ENTRY LOGIC PLACED HERE
 if ((lag1_macd < lag1_macd_signal and cur_macd > cur_macd_signal) and \
     (lag1_stoch_SlowK < lag1_stoch_SlowD and cur_stoch_SlowK > cur_stoch_SlowD) and \
-    (lag1_HA_color == 'red' and cur_HA_color == 'green')):
+    (lag1_bar_data < lag1_psar and cur_bar_data > cur_psar)):
 # LONG TRADE ENTRY LOGIC ENDS HERE
 
 code...
@@ -162,7 +162,7 @@ code...
 # SHORT TRADE ENTRY LOGIC PLACED HERE
 if ((lag1_macd > lag1_macd_signal and cur_macd < cur_macd_signal) and \
     (lag1_stoch_SlowK > lag1_stoch_SlowD and cur_stoch_SlowK < cur_stoch_SlowD) and \
-    (lag1_HA_color == 'green' and cur_HA_color == 'red')):
+    (lag1_bar_data > lag1_psar and cur_bar_data < cur_psar)):
 # SHORT TRADE ENTRY LOGIC PLACED HERE
 ```
 
