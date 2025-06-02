@@ -79,6 +79,7 @@ Starter-Package-Repo/
 ### **a.) Boilerplate Scripts**
 Live trading scripts located in `scripts/boilerplate/`:
 - **Trailing_Stop_OHLC.py**: Implements trailing stop logic for live trading (hourly timeframe example)
+- **Lazybear_Swing_OHLC.py**: Alert only strategy using daily frames and the use of the lazybear indicator.
 
 ### **b.) Backtesting Scripts**
 Backtesting scripts located in `scripts/backtest/`:
