@@ -1,5 +1,4 @@
-# **Bot Brie Starter Boilerplate** 🐈 ![image](https://github.com/user-attachments/assets/044d5878-b759-49b7-aef4-f951baa01c52)
-
+# **Bot Brie Starter Boilerplate** 🐈
 
 
 Welcome to Bot_Brie Starter—your playground for turning trading ideas into live strategies. Ever wanted to code your own moving‐average crossover? Or buy when RSI dips below 10 three bars in a row? Maybe you’ve dreamed up a custom indicator combo that could light up your P&L. With Bot_Brie Starter, you can instantly plug in any indicator logic, backtest it on historical minute bars, and see your signals in action—all in one tidy Python framework. Ready to bring your next great strategy to life?
