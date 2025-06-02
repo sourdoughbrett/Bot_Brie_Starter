@@ -2,14 +2,7 @@
 
 Welcome to Bot_Brie Starter—your playground for turning trading ideas into live strategies. Ever wanted to code your own moving‐average crossover? Or buy when RSI dips below 10 three bars in a row? Maybe you’ve dreamed up a custom indicator combo that could light up your P&L. With Bot_Brie Starter, you can instantly plug in any indicator logic, backtest it on historical minute bars, and see your signals in action—all in one tidy Python framework. Ready to bring your next great strategy to life?
 
-clone the repository to your local environment:
-```plaintext
-git clone https://github.com/sourdoughbrett/Bot_Brie_Starter.git
-```
-
-Alternatively you can copy and paste the files from Github since there are only a few.
-
---
+---
 
 To begin using the Bot Brie All-In Boilerplate, you'll first need access to Alpaca’s API. 
 
@@ -27,7 +20,11 @@ Follow these steps to create an Alpaca account and obtain your API keys:
 
 3. Familiarize yourself with Alpaca's documentation for API usage:  
    - [Alpaca API Docs](https://alpaca.markets/docs/)
-
+  
+4. clone the repository to your local environment:
+```plaintext
+git clone https://github.com/sourdoughbrett/Bot_Brie_Starter.git
+```
 ---
 
 ## **1️⃣ Overview** 📣
