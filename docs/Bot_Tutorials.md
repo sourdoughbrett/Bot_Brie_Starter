@@ -332,6 +332,6 @@ To add more bars for backtesting, add lag3, lag4, lag5, etc. with the same forma
 
 Align with your strategy idea to hone in on a profitable idea or system 🎯
 
-## 🎁 Bonus SIGNAL-LAKE 🎁
+## 🎁 Bonus Signal-Lake 🎁
 
 Take you Alpaca Keys over to Signal-Lake to take your trading to the next level with a real-time predictive dashboard to assist you in your trading efforts!
