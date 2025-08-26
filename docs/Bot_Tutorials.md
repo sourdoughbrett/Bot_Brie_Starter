@@ -332,10 +332,6 @@ To add more bars for backtesting, add lag3, lag4, lag5, etc. with the same forma
 
 Align with your strategy idea to hone in on a profitable idea or system 🎯
 
-## 🎁 Bonus (Build your ML Algorithm) 🚧
+## 🎁 Bonus SIGNAL-LAKE 🎁
 
-By accessing the Alpaca API users have access to thousands of rows and columns of historical bar data. Perfect for building an LSTM model for timeseries predictions.
-
-What if you could build a model that updated every hour that was forecasting the price of a particular asset for the next hour? What if efficacy can be found based on more data points? How would this transform your strategies?
-
-To be announced!
+Take you Alpaca Keys over to Signal-Lake to take your trading to the next level with a real-time predictive dashboard to assist you in your trading efforts!
