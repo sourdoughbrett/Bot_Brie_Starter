@@ -264,7 +264,7 @@ def calculate_parabolic_SAR(df, column="close", acceleration=psar_acceleration_d
     return sar_df
 
 
-def calculate_stochastic(df, high_col="high", low_col="low", close_col="close", fastk_period=stoch_fastK_period_val, slowk_period=stoch_slowK_period_val, slowd_period=stoch_slowK_period_val):
+def calculate_stochastic(df, high_col="high", low_col="low", close_col="close", fastk_period=stoch_fastK_period_val, slowk_period=stoch_slowK_period_val, slowd_period=stoch_slowD_period_val):
     """Calculate the Stochastic oscillator using TALIB on a pandas DataFrame.
 
     Args:
