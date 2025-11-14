@@ -439,7 +439,7 @@ def calculate_ema_20(df, column="close", period=ema_20_period_val):
         pandas.Series: Series containing the EMA values.
     """
     close_prices = df[column].astype(float).values
-    ema_20 = talib.EMA(close_prices, timeperiod=ema_slow_period_val)
+    ema_20 = talib.EMA(close_prices, timeperiod=ema_20_period_val)
     ema_series_20 = pd.Series(ema_20, index=df.index).rename("EMA_20")
     return ema_series_20
 
@@ -598,13 +598,13 @@ bbands_df = calculate_bollinger_bands_tame(df=hist_data_raw, column="close", per
 hist_data_raw['upper_b'] = bbands_df['upper_b']
 hist_data_raw['lower_b'] = bbands_df['lower_b']
 #SMA_Fast Concat
-sma_series = calculate_sma_fast(df=hist_data_raw, column='close',period='10')
+sma_series = calculate_sma_fast(df=hist_data_raw, column='close',period=10)
 hist_data_raw['SMA_Fast'] = sma_series
 #EMA_Fast Concat
-ema_series_fast = calculate_ema_fast(df=hist_data_raw, column='close',period='5')
+ema_series_fast = calculate_ema_fast(df=hist_data_raw, column='close',period=5)
 hist_data_raw['EMA_Fast'] = ema_series_fast
 #EMA_Slow Concat
-ema_series_slow = calculate_ema_slow(df=hist_data_raw, column='close',period='20')
+ema_series_slow = calculate_ema_slow(df=hist_data_raw, column='close',period=20)
 hist_data_raw['EMA_Slow'] = ema_series_slow
 #rolling avg volume concat
 rolling_avg_volume_series = calculate_rolling_average_volume(df=hist_data_raw, column='volume', period=14)
