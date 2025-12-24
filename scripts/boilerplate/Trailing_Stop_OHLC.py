@@ -852,8 +852,7 @@ def main():
                                 order = api.submit_order(symbol,
                                                          qty,
                                                          side='buy',
-                                                         type='limit',
-                                                         limit_price=cur_avg_hlc.round(2),
+                                                         type='market',
                                                          time_in_force='gtc')
                                 print(f"(BOUGHT) Submitted limit buy order for {qty} shares in {symbol}")
                                 combined_trade_count += 1
@@ -897,8 +896,7 @@ def main():
                                 order = api.submit_order(symbol, 
                                                          qty, 
                                                          side='sell',
-                                                         type='limit',
-                                                         limit_price=cur_avg_hlc.round(2), #what is your limit price? Should be the cur_bar_data or some aspect of the current bar. the hlc is the average high, low, close.
+                                                         type='market',
                                                          time_in_force='gtc')
                                 print(f"(BOUGHT) sell order for {qty} shares in {symbol}")
                                 combined_trade_count += 1
