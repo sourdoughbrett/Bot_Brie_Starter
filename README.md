@@ -3,7 +3,7 @@
 
 Welcome to the BotBrie Starter Boilerplate - Your playground for turning trading ideas into live strategies! 
 
-Ever wanted to code your own moving‐average crossover? Or buy when RSI dips below 10 three bars in a row? Maybe you’ve dreamed up a custom indicator combo that could light up your P&L. 
+Ever wanted to code your own moving‐average crossover? Or buy when the RSI dips below 10 three bars in a row? That MACD crossover over the 200-day EMA?
 
 With Bot Brie Starter, you can instantly plug in any indicator logic, backtest it on historical minute bars, and see your signals in action—all in one tidy Python framework.
 
