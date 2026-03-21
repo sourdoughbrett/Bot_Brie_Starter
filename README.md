@@ -11,7 +11,7 @@ With Bot Brie Starter, you can instantly plug in any indicator logic, backtest i
 
 ---
 
-To begin using the Bot Brie All-In Boilerplate, you'll first need access to Alpaca’s API. 
+To begin using the Bot Brie Starter Boilerplate, you'll first need access to Alpaca’s API. 
 
 Follow these steps to create an Alpaca account and obtain your API keys:
 
@@ -35,7 +35,7 @@ git clone https://github.com/sourdoughbrett/Bot_Brie_Starter.git
 ---
 
 ## **1️⃣ Overview** 📣
-The Bot Brie All-In Boilerplate is a powerful, customizable trading framework designed to help you automate trading strategies using Alpaca’s API. This package supports:
+The Bot Brie Starter Boilerplate is a powerful, customizable trading framework designed to help you automate trading strategies using Alpaca’s API. This package supports:
 - **Trailing_Stops** for dynamic risk management.
 - **Multiple Timeframes** for flexible strategy implementation (15m, 1h, daily, weekly). 1m, 2m, 5m and custom timeframe strategies are available with the [All-In Package](https://www.apitradebuilder.com/)
 - **Comprehensive Backtesting Tools** for strategy validation before live trading.
