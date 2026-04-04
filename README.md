@@ -9,6 +9,8 @@ Welcome to the BotBrie Starter Boilerplate - Your playground for turning trading
 
 With Bot Brie Starter, you can instantly plug in any indicator logic, backtest it on historical minute bars, and see your signals in action—all in one tidy Python framework.
 
+Check out more 👉 **[API Trade Builder](https://apitradebuilder.com/))**
+
 ---
 
 To begin using the Bot Brie Starter Boilerplate, you'll first need access to Alpaca’s API. 
