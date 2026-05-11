@@ -1,7 +1,5 @@
 # **Bot Brie Starter Boilerplate** 🐈
 
-![Dashboard Preview](images/Bot_Brie_official_logo.png)
-
 Welcome to the BotBrie Starter Boilerplate - Your playground for turning trading ideas into live strategies! 
 
 - Ever wanted to code your own moving‐average crossover? 
