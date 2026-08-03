@@ -104,7 +104,7 @@ Only a few indicator values have been hard coded as global variables, you can ad
 # MACD 
 macd_fast_period_val = 12
 macd_slow_period_val = 26
-macd_signal_period_val = 2
+macd_signal_period_val = 9
 # EMA
 ema_fast_period_val = 3
 ema_mod_period_val =  6
